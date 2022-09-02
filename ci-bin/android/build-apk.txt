@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e -x
+
+.ci/bin/android/change-environment "$CI_COMMIT_REF_NAME"
+
+.ci/bin/build-dist --configuration=production "$@"
+
+npx cap sync android
+
+npx cap copy
+
+cd android
+
+exec ./gradlew assembleDebug

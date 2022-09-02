@@ -1,0 +1,57 @@
+<ion-header>
+  <app-primary-header [title]="'Dashboard' | translate">
+    <ion-back-button></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+
+  <app-company-label></app-company-label>
+
+  <ion-list lines="none" *ngIf="orders" class="ion-padding-start ion-padding-end">
+
+    <div [routerLink]="['/customers/orders/new']" routerLinkActive="router-link-active"  class="margin-auto ion-text-center">
+      <ion-button size="medium" class="ion-margin-top" mode="md" color="primary">{{ 'Create new order' | translate }}</ion-button>
+    </div>
+
+    <h6>{{ 'Order Requests' | translate }}</h6>
+    <ng-container *ngFor="let order of orders | filterByKey : 'status' : OrderStatusSections.Requested | orderByKey : 'id' : 'desc' | slice : 0 : 1" >
+      <app-order-small-card [order]="order"></app-order-small-card>
+    </ng-container>
+
+    <div class="ion-text-center" *ngIf="(orders | filterByKey : 'status' : OrderStatusSections.Requested | slice : 0 : 1).length == 0">
+      <ion-note>{{ 'No order requests' | translate }}</ion-note>
+    </div>
+
+    <ion-item class="ion-margin" lines="none" detail="false">
+      <button expand="block" mat-button color="primary" class="full-width" [routerLink]="['/customers/orders', Section.Requested]">
+        {{ 'Show Orders' | translate }}
+      </button>
+    </ion-item>
+
+    <h6>{{ 'Orders In Progress' | translate }}</h6>
+    <ng-container *ngFor="let order of orders | filterByKey : 'status' : OrderStatusSections.Pending | orderByKey : 'id' : 'desc' | slice : 0 : 1" >
+      <app-order-small-card [order]="order"></app-order-small-card>
+    </ng-container>
+
+    <div class="ion-text-center" *ngIf="(orders | filterByKey : 'status' : OrderStatusSections.Pending | slice : 0 : 1).length == 0">
+      <ion-note>{{ 'No orders in progress' | translate }}</ion-note>
+    </div>
+
+    <ion-item class="ion-margin" lines="none" detail="false">
+      <button expand="block" mat-button color="primary" class="full-width" [routerLink]="['/customers/orders', Section.Pending]">
+        {{ 'Show Orders' | translate }}
+      </button>
+    </ion-item>
+
+    <h6>{{ 'Location Management' | translate }}</h6>
+    <app-location-card class="ion-no-padding" [routerLink]="['/locations', location.id, 'edit']" routerLinkActive="router-link-active" [location]="location" *ngFor="let location of locations | slice : 0 : 2"></app-location-card>
+
+    <ion-item lines="none" detail="false">
+      <button class="ion-margin" expand="block" mat-button color="primary" class="full-width" [routerLink]="['/locations']">
+        {{ 'Show Locations' | translate }}
+      </button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,17 @@
+[settings]
+  id = ''
+
+[build]
+  command = 'export PATH=./.ci/bin/:"$PATH" && build-netlify'
+  publish = 'www'
+
+[[redirects]]
+  from = '/api/*'
+  to = ''
+  status = 200
+  force = true
+
+[[redirects]]
+  from = '/*'
+  to = '/index.html'
+  status = 200

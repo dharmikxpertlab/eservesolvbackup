@@ -1,0 +1,12 @@
+<h6 class="ion-no-margin ion-margin-start ion-margin-top">{{ 'Managing order as:' | translate }}</h6>
+
+<ion-item *ngIf="candidate" lines="none" [routerLink]="['/auth', 'profile', 'service-provider', candidate.id]">
+  <ion-avatar slot="start">
+    <app-profile-picture [user]="candidate"></app-profile-picture>
+  </ion-avatar>
+  <ion-label>
+
+    <h3>{{ candidate.first_name }} {{ candidate.last_name }}</h3>
+    <p>{{ candidate.phone }}</p>
+  </ion-label>
+</ion-item>

@@ -1,0 +1,51 @@
+<ion-header>
+  <app-primary-header *ngIf="!location" [title]="'Location Management' | translate">
+    <ion-back-button [defaultHref]="'/locations'"></ion-back-button>
+  </app-primary-header>
+  <app-primary-header *ngIf="location" [title]="location.name">
+    <ion-back-button [defaultHref]="'/locations'"></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="ion-margin-top ion-padding-start ion-padding-end" *ngIf="location && location.id">
+    <button *ngxPermissionsOnly="[Roles.MacManager]" mat-stroked-button color="primary"
+      [routerLink]="['/locations', location.id, 'machines']" routerLinkActive="router-link-active">{{ 'Machine
+      Management' | translate }}</button>
+  </div>
+  <br>
+  <h5 class="ion-no-margin strong ion-margin-start">{{ 'Address' | translate }}</h5>
+  <form [formGroup]="locationForm" class="ion-padding" (ngSubmit)="addOrUpdate()">
+
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>{{ 'Designation' | translate }}</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>{{ 'Street / Housenumber' | translate }}</mat-label>
+      <input matInput formControlName="address">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Pincode' | translate }}</mat-label>
+      <input type="text" matInput formControlName="zip_code">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Place' | translate }}</mat-label>
+      <input type="text" matInput formControlName="city">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Remarks' | translate }}</mat-label>
+      <input type="text" matInput formControlName="remark">
+    </mat-form-field>
+    <app-form-footer *ngxPermissionsOnly="[Roles.LocManager]" (saveButtonClick)="addOrUpdate()"></app-form-footer>
+
+    <ion-button *ngIf="location" (click)="deleteLocation(location)" expand="block" mode="md"
+      class="ion-margin-top ion-margin-bottom">{{ 'Delete' | translate }}</ion-button>
+
+  </form>
+</ion-content>

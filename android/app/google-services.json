@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "847945805342",
+    "project_id": "eservsol-a33dc",
+    "storage_bucket": "eservsol-a33dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847945805342:android:1a96912ae354c798bbc80f",
+        "android_client_info": {
+          "package_name": "com.eservsol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847945805342-sqbv3g5okv4pjea3q61moc8kuslq7jp6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWkwpHNNT64ttij8LLlJBPkYfOTkfcTkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847945805342-sqbv3g5okv4pjea3q61moc8kuslq7jp6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "847945805342-1ufvf1j28o6qdm7546h275v0j96h3hdc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.eservsol",
+                "app_store_id": "1562685895"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

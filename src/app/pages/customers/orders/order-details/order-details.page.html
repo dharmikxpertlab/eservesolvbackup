@@ -1,0 +1,43 @@
+<ion-header>
+  <app-primary-header *ngIf="order" [title]="'ORDER_DETAIL_PAGE_TITLE' | translate : { company: order.location_description.name}">
+    <ion-back-button [defaultHref]="'/customers/orders'"></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshOrder($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ng-container *ngIf="order">
+
+    <ng-container *ngIf="serviceProvider">
+      <ng-container *ngIf="order.completed_at">
+        <app-order-completion-card [order]="order"></app-order-completion-card>
+      </ng-container>
+
+      <div class="ion-padding">
+        <h6 *ngIf="!order.completed_at">{{ 'Your service technician' | translate }}</h6>
+        <app-contact [order]="order"></app-contact>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="cancelled">
+      <h3 class="ion-padding-start">{{ 'Order Cancelled' | translate }}</h3>
+    </ng-container>
+
+
+    <ng-container *ngIf="!cancelled">
+      <app-order-status-stepper (orderStateChange)="fetchOrder()" [order]="order" [orderSteps]="CustomerOrderSteps"></app-order-status-stepper>
+    </ng-container>
+
+    <app-order-details-component [order]="order"></app-order-details-component>
+
+  </ng-container>
+  <br><br>
+</ion-content>
+
+
+<ion-footer class="ion-padding" *ngIf="!accepted && !cancelled" (click)="cancelOrder()">
+  <ion-button expand="block" fill="outline">{{ 'Cancel Order' | translate }}</ion-button>
+</ion-footer>

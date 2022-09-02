@@ -1,0 +1,38 @@
+<ion-header>
+  <app-primary-header [title]="'Employee Manager' | translate">
+    <ion-back-button></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none" class="ion-padding" *ngIf="employees">
+    <ion-item lines="none" class="ion-no-padding" *ngIf="accountOwner">
+      <!-- create a ion toggle with label -->
+      <ion-toggle slot="end" [(ngModel)]="accountOwner.receive_employee_order_match_notification" mode='md' (ionChange)="togglePushNotifications()"></ion-toggle>
+      <ion-text slot="start">
+        {{ 'Receive a copy of push notifications' | translate }}
+      </ion-text>
+    </ion-item>
+    <ion-grid class="ion-margin-top ion-margin-bottom ion-no-padding">
+      <ion-row>
+        <ion-col class="ion-no-padding">
+          <app-sorting
+            [fields]="[
+              {
+                text: 'Location',
+                value: 'location'
+              },
+              {
+                text: 'Last Name',
+                value: 'last_name'
+              }
+            ]"
+            *ngIf="employees && employees.employees"
+            (fieldSelectionEvent)="setFilter($event)">
+          </app-sorting>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <app-employee-list-item [routerLink]='["/auth", "profile", "service-provider", serviceProvider.id]' *ngFor="let serviceProvider of employees.employees | orderByKey: this.filter" [serviceProvider]="serviceProvider"></app-employee-list-item>
+  </ion-list>
+</ion-content>

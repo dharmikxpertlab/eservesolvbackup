@@ -1,0 +1,51 @@
+<div class="ion-padding-start ion-padding-end">
+  <div class="item" *ngIf="order.machine_description">
+    <h6>{{ 'Machine' | translate }}</h6>
+    <p>{{ order.machine_description.manufacturer }} {{ order.machine_description.type }} {{ order.machine_description.serial_number }}</p>
+  </div>
+
+  <div class="item" *ngIf="order.description">
+    <h6>{{ 'Job Description' | translate }}</h6>
+    <p>{{ order.description }}</p>
+  </div>
+
+  <app-order-document-preview [showDeleteButton]="false" [documents]="order.documents"></app-order-document-preview>
+
+  <div class="item">
+    <h6>{{ 'Place of use' | translate }}</h6>
+    <p>{{ order.location_description.company.name }}</p>
+    <p>{{ order.location_description.address }}
+    <p>{{ order.location_description.zip_code }} {{ order.location_description.city }}</p>
+  </div>
+
+  <ng-container *ngIf="order.normalized_what_three_words && order.accepted_at">
+    <div class="item">
+      <h6>{{ 'what3words' | translate }}</h6>
+      <p>{{ order.normalized_what_three_words }}</p>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="userType === RolesEnum.Customer && !order.completed_at">
+    <div class="item">
+      <h6>{{ 'Order completion PIN' | translate }}</h6>
+      <p>{{ order.order_pin }}</p>
+    </div>
+  </ng-container>
+
+  <ion-card mode="md" class="ion-no-margin">
+    <ion-item lines="none">
+      <ion-label>
+        <h3>{{ 'Your contact' | translate }}</h3>
+        <p>{{ order.contact_person_full_name }}</p>
+        <ion-item lines="none" class="ion-align-self-center ion-no-padding">
+          <ion-icon slot="start" name="call-outline" class="icon"></ion-icon>
+          <a href="tel:{{ order.contact_person_phone }}">{{ order.contact_person_phone }}</a>
+        </ion-item>
+        <ion-item lines="none" class="ion-align-self-center ion-no-padding">
+          <ion-icon slot="start" name="mail-outline" class="icon"></ion-icon>
+          <a href="mailto:{{ order.contact_person_email }}">{{ order.contact_person_email }}</a>
+        </ion-item>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+</div>

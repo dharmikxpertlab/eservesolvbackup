@@ -1,0 +1,113 @@
+<ion-header>
+  <app-primary-header [title]="'Profile' | translate">
+    <ion-back-button defaultHref="/technicians/dashboard"></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="profileForm" class="ion-padding" (ngSubmit)="updateProfile()">
+
+    <div *ngIf="user" lines="none" class="ion-margin-bottom ion-text-center profile-picture">
+      <img class="margin-auto" [src]="user.profile.profile_picture" *ngIf="user.profile && user.profile.profile_picture" />
+      <img class="margin-auto" src="assets/icon/person-circle-outline.jpeg" *ngIf="!user.profile || !user.profile.profile_picture" />
+
+      <ion-icon class="margin-auto" (click)="clickFileInput()" name="camera"></ion-icon>
+    </div>
+    <input #profilePictureButton class="display-none file-input" type="file" (change)="selectFileToUpload($event)">
+
+
+    <ion-item lines="none" formGroupName="profile" class="ion-margin-bottom margin-auto ion-text-center">
+      <div class="margin-auto ion-text-center available-toggle">
+        <ion-toggle mode="md" formControlName="available" (click)="toggleStatus()"></ion-toggle>
+        <ion-text> {{ 'Available' | translate }}</ion-text>
+      </div>
+    </ion-item>
+
+    <mat-form-field *ngIf="user && user.username" appearance="outline" color="primary">
+      <mat-label>{{ 'Username' | translate }}</mat-label>
+      <input class="disabled-input" type="text" matInput [value]="user.username" disabled>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>{{ 'First Name' | translate }}</mat-label>
+      <input type="text" matInput formControlName="first_name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Last Name' | translate }}</mat-label>
+      <input type="text" matInput formControlName="last_name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Phone' | translate }}</mat-label>
+      <input type="text" matInput formControlName="phone">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'E-Mail' | translate }}</mat-label>
+      <input type="email" matInput formControlName="email">
+    </mat-form-field>
+
+    <ng-container formGroupName="profile">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'Description' | translate }}</mat-label>
+        <textarea type="text" matInput formControlName="description"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'Location' | translate }}</mat-label>
+
+        <mat-select formControlName="location">
+          <mat-option *ngFor="let item of locations" [value]="item.id">
+            {{ item.name }}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+
+      <h6 class="strong">{{ 'Compensation' | translate }}</h6>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <div>
+              <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label>{{ 'Standard Rate' | translate }}</mat-label>
+                <input placeholder="0.00" type="text" matInput formControlName="rate_standard">
+                <span matSuffix>€/h</span>
+              </mat-form-field>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div>
+              <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label>{{ 'Emergency Rate' | translate }}</mat-label>
+                <input placeholder="0.00" type="text" matInput formControlName="rate_emergency">
+                <span matSuffix>€/h</span>
+              </mat-form-field>
+            </div>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+      <ng-container *ngIf="user">
+        <ng-container *ngFor="let item of Options; let index = index">
+          <app-accordion
+            (optionsChangeEvent)="updateOptions($event, item.type)"
+            [values]="profileForm.get('profile').get(item.type).value"
+            [options]="user.options[item.type]"
+            [mode]="item"
+            [useSubGroups]="true"
+            title="{{ item.name }}"
+            titleIndex="{{ index + 1}}">
+          </app-accordion>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
+    <ion-button [disabled]="!profileForm.valid" expand="block" mode="md" class="ion-margin-top ion-margin-bottom"
+      type="submit">{{ 'Update' | translate }}</ion-button>
+
+    <ion-button routerLink="/auth/password/change" mode="md" expand="block" fill="outline">{{ 'Change Password' | translate }}</ion-button>
+  </form>
+
+</ion-content>

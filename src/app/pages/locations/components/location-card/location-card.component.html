@@ -1,0 +1,7 @@
+<ion-card class="ion-no-margin ion-margin-bottom">
+  <h5 class="ion-margin-top ion-margin-start">{{ location.name }}</h5>
+  <ion-item class="ion-margin-start ion-no-padding" lines="none">
+    <h6>{{ location.address }}<br>{{ location.zip_code }} {{ location.city }}</h6>
+    <ion-button *ngIf="detailsButton" slot="end" size="medium" mode="md">{{ 'Details' | translate }}</ion-button>
+  </ion-item>
+</ion-card>

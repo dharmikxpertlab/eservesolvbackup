@@ -1,0 +1,103 @@
+image: registry.gitlab.viperdev.io/infrastructure/ionic-image:latest
+
+stages:
+  - test
+  - build
+  - deploy
+
+include:
+  - project: 'infrastructure/ci-scripts'
+    file: 'deploy-netlify.yml'
+
+before_script:
+  - export PATH=$CI_PROJECT_DIR:$CI_PROJECT_DIR/.ci/bin:$PATH
+  - npm install
+
+dev:tslint:
+  stage: test
+  script:
+    - run-lint
+
+build:web:
+  stage: build
+  script:
+    - ionic build --configuration=master
+  artifacts:
+    paths:
+      - ./www
+  except:
+    - /^production/.*$/
+
+build:android:debug:
+  stage: build
+  script:
+    - ionic build --configuration=master
+    - npx cap sync android
+    - npx cap copy
+    - cd android
+    - ./gradlew assembleDebug
+  artifacts:
+    name: "${CI_JOB_NAME}-${CI_COMMIT_REF_SLUG}-buildApk"
+    paths:
+      - ./android/app/build/outputs/apk/debug/
+    expire_in: 7 days
+  when: manual
+  except:
+    - /^production/.*$/
+
+build:web:prod:
+  stage: build
+  script:
+    - ionic build  --configuration=production
+  artifacts:
+    paths:
+      - ./www
+  only:
+    - /^production/.*$/
+
+build:android:debug:prod:
+  stage: build
+  script:
+    - ionic build --configuration=production
+    - npx cap sync android
+    - npx cap copy
+    - cd android
+    - ./gradlew assembleDebug
+  artifacts:
+    name: "${CI_JOB_NAME}-${CI_COMMIT_REF_SLUG}-buildApk"
+    paths:
+      - ./android/app/build/outputs/apk/debug/
+    expire_in: 7 days
+  when: manual
+  only:
+    - /^production/.*$/
+
+deploy:netlify:preview:
+  extends:
+    - .deploy_netlify
+  variables:
+    NETLIFY_SITE_ID: '097562c9-5567-4673-85a8-93d6ce2cdf76'
+    NETLIFY_DEPLOY_DIR: 'www'
+  except:
+    - master
+    - /^production/.*$/
+
+deploy:netlify:master:
+  extends:
+    - .deploy_netlify
+  variables:
+    NETLIFY_SITE_ID: '097562c9-5567-4673-85a8-93d6ce2cdf76'
+    NETLIFY_DEPLOY_DIR: 'www'
+    NETLIFY_DEPLOY_PROD: 'y'
+  only:
+    - master
+
+deploy:netlify:prod:
+  extends:
+    - .deploy_netlify
+  variables:
+    NETLIFY_SITE_ID: 'dfcc262f-985d-4d55-ba23-70f0be525417'
+    NETLIFY_DEPLOY_DIR: 'www'
+    NETLIFY_DEPLOY_PROD: 'y'
+  only:
+    - /^production/.*$/

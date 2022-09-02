@@ -1,0 +1,37 @@
+ion-list {
+    font-size: 18px
+}
+
+ion-label a {
+    font-size: 12px;
+}
+
+ion-icon {
+    height: 16px;
+    width: 16px;
+}
+
+ion-label ion-item {
+    font-size: 12px;
+    --min-height: 1px;
+
+    ion-icon {
+        height: 12px;
+        width: 12px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    a {
+        margin-top: 2px;
+    }
+}
+
+.company {
+    font-size: 12px;
+}
+
+ion-note {
+    font-size: 10px;
+}

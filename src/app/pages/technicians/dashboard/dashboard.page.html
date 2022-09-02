@@ -1,0 +1,40 @@
+<ion-header>
+  <app-primary-header [title]="'Dashboard' | translate">
+    <ion-back-button></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshOrder($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list lines="none" class="ion-padding">
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-label>{{ 'Available' | translate }}</ion-label>
+      <ion-toggle mode="md" [ngModel]="isAvailable" (ngModelChange)="toggleAvailability()"></ion-toggle>
+    </ion-item>
+
+    <h6>{{ 'Orders In Request' | translate }}</h6>
+    <app-order-list-item [order]="order" *ngFor="let order of orders | filterByKey : 'status' : OrderStatusSections.Requests | orderByKey : 'id' : 'desc' | slice : 0 : 1"></app-order-list-item>
+    <div class="ion-text-center" *ngIf="(orders | filterByKey : 'status' : OrderStatusSections.Requests | slice : 0 : 1).length == 0">
+      <ion-note>{{ 'No orders requests' | translate }}</ion-note>
+    </div>
+    <ion-item class="ion-margin" lines="none" detail="false">
+      <button expand="block" mat-button color="primary" class="full-width" [routerLink]="['/technicians/orders', Section.Requests]">
+        {{ 'Show Orders' | translate }}
+      </button>
+    </ion-item>
+
+    <h6>{{ 'Active Orders' | translate }}</h6>
+    <app-order-list-item [order]="order" *ngFor="let order of orders | filterByKey : 'status' : OrderStatusSections.Active | orderByKey : 'id' : 'desc' | slice : 0 : 1"></app-order-list-item>
+      <div class="ion-text-center" *ngIf="(orders | filterByKey : 'status' : OrderStatusSections.Active | slice : 0 : 1).length == 0">
+        <ion-note>{{ 'No active orders' | translate }}</ion-note>
+      </div>
+      <ion-item class="ion-margin" lines="none" detail="false">
+        <button expand="block" mat-button color="primary" class="full-width" [routerLink]="['/technicians/orders', Section.Active]">
+          {{ 'Show Orders' | translate }}
+        </button>
+      </ion-item>
+  </ion-list>
+</ion-content>

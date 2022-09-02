@@ -1,0 +1,58 @@
+/* tslint:disable */
+/* eslint-disable */
+import { AreaEnum } from './area-enum';
+import { LocationCompany } from './location-company';
+import { Machine } from './machine';
+import { OrderCandidate } from './order-candidate';
+import { OrderDescriptionDocument } from './order-description-document';
+import { ServiceProviderUser } from './service-provider-user';
+import { StatusEnum } from './status-enum';
+import { Type2DeEnum } from './type-2-de-enum';
+export interface EmployeeOrder {
+  accepted_at?: null | string;
+  applicable_rate: string;
+  area: AreaEnum;
+  candidate_service_providers: Array<OrderCandidate>;
+  certificates?: Array<number>;
+  completed_at?: null | string;
+  contact_person_email: string;
+  contact_person_full_name: string;
+  contact_person_phone: string;
+  cost: string;
+  created_at: string;
+  customer_signature?: null | string;
+  description?: null | string;
+  documents: Array<OrderDescriptionDocument>;
+  experience?: Array<number>;
+  finalized_distance?: null | string;
+  finalized_rate?: null | string;
+  id: number;
+  last_updated_at: string;
+  location: number;
+  location_description: LocationCompany;
+  machine: null | number;
+  machine_description: Machine;
+  needs_fix_before: string;
+  needs_fix_in_hours: number;
+  normalized_what_three_words: string;
+  on_the_way_at?: null | string;
+  order_finalized_at?: null | string;
+  order_pin: string;
+  service_provider: ServiceProviderUser;
+  service_provider_distance: number;
+  skills?: Array<number>;
+  status?: StatusEnum;
+  training?: Array<number>;
+  travelling_cost_customer: string;
+  travelling_cost_employee: string;
+  travelling_time: string;
+  travelling_time_text: string;
+  type: Type2DeEnum;
+  what_three_words?: null | string;
+  work_completed_at?: null | string;
+  work_started_at?: null | string;
+  working_cost_customer: string;
+  working_cost_employee: string;
+  working_time: string;
+  working_time_text: string;
+}

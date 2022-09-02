@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border" translucent="true">
+  <app-primary-header menuButtonColor="'primary'" toolbarColor="'light'">
+    <ion-back-button defaultHref="/auth" color="primary"></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content class="ion-padding-start ion-padding-end">
+  <app-eservsol-header></app-eservsol-header>
+
+  <h4 class="ion-no-margin ion-margin-bottom">{{ 'Registration' | translate }}</h4>
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'Salutation' | translate }}</mat-label>
+      <select matNativeControl required formControlName="gender">
+        <option selected disabled value="null">{{ 'Choose' | translate }}</option>
+        <option *ngFor="let item of GenderOptions | keyvalue: sortNull" [value]="item.value">{{ 'SALUTATION_' + item.value | translate }}</option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>{{ 'First Name' | translate }}</mat-label>
+      <input type="text" matInput formControlName="first_name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Last Name' | translate }}</mat-label>
+      <input type="text" matInput formControlName="last_name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Phone' | translate }}</mat-label>
+      <input type="text" matInput formControlName="phone">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'E-Mail' | translate }}</mat-label>
+      <input type="email" matInput formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Password' | translate }}</mat-label>
+      <input type="password" matInput formControlName="password">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Company' | translate }}</mat-label>
+      <input type="text" matInput formControlName="company_hint">
+    </mat-form-field>
+
+    <div class="ion-text-center">
+      <ion-text>
+        {{ 'With your registration you accept the terms and conditions and data protection information' | translate }}
+      </ion-text>
+    </div>
+
+    <ion-item class="ion-no-padding">
+      <ion-button fill="clear" (click)="openUrl('https://eservsol.com/agb/')">
+        {{ 'Terms and Conditions' | translate }}
+      </ion-button>
+    </ion-item>
+
+    <ion-item class="ion-no-padding">
+      <ion-button fill="clear" (click)="openUrl('https://eservsol.com/datenschutzbestimmungen-app/')">
+        {{ 'Privacy Policy' | translate }}
+      </ion-button>
+    </ion-item>
+
+    <ion-item lines="none" class="ion-no-padding" *ngIf="role == Roles.SpEmployee">
+      <ion-label>{{ 'I want to manage employees' | translate }}</ion-label>
+      <ion-toggle slot="end" name="is_employee_manager" formControlName="is_employee_manager" mode="md"></ion-toggle>
+    </ion-item>
+
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-label>{{ 'I want to manage locations' | translate }}</ion-label>
+      <ion-toggle slot="end" name="is_location_manager" formControlName="is_location_manager" mode="md"></ion-toggle>
+    </ion-item>
+
+    <ion-button [disabled]="!registerForm.valid" expand="block" mode="md" class="ion-margin-top ion-margin-bottom" type="submit">{{ 'Register' | translate }}</ion-button>
+
+  </form>
+</ion-content>

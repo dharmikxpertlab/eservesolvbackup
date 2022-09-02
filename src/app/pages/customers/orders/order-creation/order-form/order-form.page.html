@@ -1,0 +1,157 @@
+<ion-header>
+  <app-primary-header [title]="'Create Order' | translate">
+    <ion-back-button defaultHref="/customers/orders/new"></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="orderForm" class="ion-padding" (ngSubmit)="submit()">
+    <mat-label class="strong">{{ 'Type' | translate }}</mat-label>:
+    <ion-text color="primary">
+      {{ orderType | translate }} / {{ orderArea | translate }}
+    </ion-text>
+
+    <h6>{{ 'Location' | translate }}</h6>
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Select a location' | translate }}</mat-label>
+
+      <mat-select required="true" formControlName="location">
+        <mat-option *ngFor="let item of locations" [value]="item.id">
+          {{ item.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <h6>{{ 'Machine' | translate }}</h6>
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Select a machine' | translate }}</mat-label>
+
+      <mat-select formControlName="machine">
+        <mat-option>{{ 'Not applicable' | translate }}</mat-option>
+        <mat-option *ngFor="let item of machines" [value]="item.id">
+          {{ item.manufacturer }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <h6>{{ 'Exact location' | translate }}</h6>
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'what3words' | translate }}</mat-label>
+      <input type="text" matInput formControlName="what_three_words">
+    </mat-form-field>
+
+    <ng-container *ngIf="credentialOptions && orderFetched">
+      <ng-template [ngTemplateOutlet]="options1"></ng-template>
+    </ng-container>
+
+    <ng-container *ngIf="credentialOptions && !orderFetched">
+      <ng-template [ngTemplateOutlet]="options1"></ng-template>
+    </ng-container>
+
+    <ng-template #options1>
+      <ng-container *ngFor="let item of OptionsSection1">
+        <app-accordion
+          (optionsChangeEvent)="updateOptions($event, item.type)"
+          [values]="orderForm.get(item.type).value"
+          [options]="credentialOptions[item.type]"
+          [mode]="item"
+          [area]="orderAreaValue"
+          [filterCategories]="true">
+        </app-accordion>
+      </ng-container>
+    </ng-template>
+
+    <h6>{{ 'Description of the damage' | translate }}</h6>
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Description' | translate }}</mat-label>
+      <textarea required="true" type="text" matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <h6>{{ 'Local Contact' | translate }}</h6>
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>{{ 'Name' | translate }}</mat-label>
+      <input required="true" type="text" matInput formControlName="contact_person_full_name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Phone' | translate }}</mat-label>
+      <input required="true" type="text" matInput formControlName="contact_person_phone">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'E-Mail' | translate }}</mat-label>
+      <input required="true" type="email" matInput formControlName="contact_person_email">
+    </mat-form-field>
+
+    <h6>{{ 'Requirements for the technician' | translate }}</h6>
+    <mat-form-field appearance="outline" *ngIf="orderTypeValue !== Type2DeEnum.PredictiveMaintenance">
+      <mat-label>{{ 'Select a time window' | translate }}</mat-label>
+
+      <mat-select required="true" formControlName="needs_fix_in_hours">
+        <mat-option *ngFor="let item of serviceTimeOptions" [value]="item.value * getServiceTimeFactor(item.type)">
+          <ng-container *ngIf="item.type && item.type === ServiceTimeTypeEnum.Days">
+            {{ 'IN_' + item.value + '_DAYS' | translate }}
+          </ng-container>
+          <ng-container *ngIf="!item.type || item.type === ServiceTimeTypeEnum.Hours">
+            {{ item.value + 'h' }}
+          </ng-container>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <ng-container *ngIf="orderTypeValue === Type2DeEnum.PredictiveMaintenance">
+      <mat-form-field style="width: 1px; display: none;">
+        <input matInput [min]="minDate" [matDatepicker]="picker" formControlName="needs_fix_in_hours_date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+
+      <ion-button expand="block" fill="outline" size="medium" mode="md" type="button" (click)="picker.open()">
+        {{ 'Choose a date' | translate }}
+        <ion-icon slot="end" name="calendar" color="primary"></ion-icon>
+      </ion-button>
+
+      <ion-item class="ion-no-padding" *ngIf="selectedDateForMaintenance">
+        <ion-text>{{ 'Selected Date' | translate }}: {{ selectedDateForMaintenance }}</ion-text>
+      </ion-item>
+    </ng-container>
+
+    <br>
+
+    <ion-button class="upload-button" mode="md" color="secondary" type="button" (click)="clickFileInput()">
+      <ion-icon size="large" slot="start" name="add"></ion-icon>
+      <ion-label>{{ 'Upload descriptive documents / photos here' | translate }}</ion-label>
+    </ion-button>
+    <br>
+    <ion-note class="ion-text-center" *ngIf="!orderForm.valid">
+      {{ 'Please fill the required fields (*) before uploading documents' | translate }}
+    </ion-note>
+
+    <input #documentButton class="display-none file-input" type="file" (change)="selectFileToUpload($event)">
+
+    <app-order-document-preview (deleteButtonEvent)="deleteDocument($event)" [documents]="orderForm.get('documents').value"></app-order-document-preview>
+
+    <ng-container *ngIf="credentialOptions && !orderFetched">
+      <ng-template [ngTemplateOutlet]="options2"></ng-template>
+    </ng-container>
+
+    <ng-container *ngIf="credentialOptions && orderFetched">
+      <ng-template [ngTemplateOutlet]="options2"></ng-template>
+    </ng-container>
+
+    <ng-template #options2>
+      <ng-container *ngFor="let item of OptionsSection2">
+        <app-accordion
+          (optionsChangeEvent)="updateOptions($event, item.type)"
+          [values]="orderForm.get(item.type).value"
+          [options]="credentialOptions[item.type]"
+          [mode]="item"
+          [area]="orderAreaValue"
+          [filterCategories]="true">
+        </app-accordion>
+      </ng-container>
+    </ng-template>
+    <ion-button [disabled]="!orderForm.valid" expand="block" mode="md" class="ion-margin-top ion-margin-bottom" type="submit">{{ 'Start Search' | translate }}</ion-button>
+  </form>
+</ion-content>

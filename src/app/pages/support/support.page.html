@@ -1,0 +1,55 @@
+<ion-header>
+  <app-primary-header [title]="'Customer Support' | translate">
+    <ion-back-button></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <app-eservsol-header></app-eservsol-header>
+
+  <p class="ion-text-center">
+    {{ 'If you need support using our app, we look forward to hearing from you. Our customer service is happy to assist
+    you by phone or email.' | translate }}
+  </p>
+
+  <p class="ion-text-center">
+    {{ 'So you can contact us' | translate }}
+  </p>
+
+  <ion-item lines="none" class="ion-text-center">
+    <ion-button size="medium" mode="md" fill="outline" class="margin-auto" (click)="openUrl('tel:4925329574826')">
+      <ion-icon slot="start" name="call-outline" class="icon"></ion-icon>
+      49 25 32 95 74 82 6
+    </ion-button>
+  </ion-item>
+
+  <br>
+  <ion-item lines="none" class="ion-text-center">
+    <ion-button size="medium" mode="md" fill="outline" class="margin-auto" (click)="openUrl('https://wa.me/4925329574826')">
+      <ion-icon slot="start" name="logo-whatsapp" class="icon"></ion-icon>
+      49 25 32 95 74 82 6
+    </ion-button>
+  </ion-item>
+
+  <br>
+  <ion-item lines="none" class="ion-text-center">
+    <ion-button size="medium" mode="md" fill="outline" class="margin-auto support-mail" (click)="openUrl('mailto:support@eservsol.com')">
+      <ion-icon slot="start" name="mail-outline" class="icon"></ion-icon>
+      support@eservsol.com
+    </ion-button>
+  </ion-item>
+
+  <br>
+  <p>{{ 'Our support times are' | translate }}:</p>
+
+  <p>{{ "Monday to Saturday" | translate }}</p>
+  <p>{{ '8:00 a.m. to 6:00 p.m.' | translate }}</p>
+
+  <ion-item class="ion-text-right ion-float-end" lines="none">
+    <ion-note *ngIf="deviceInfo && deviceInfo.platform">
+      v {{ APP_VERSION['version'] }}
+      ({{ APP_VERSION['build'][deviceInfo.platform] }})
+    </ion-note>
+  </ion-item>
+</ion-content>

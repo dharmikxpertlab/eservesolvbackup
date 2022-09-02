@@ -1,0 +1,38 @@
+<ion-card class="ion-no-margin ion-margin-top" [routerLink]="['/technicians/orders/order', order.id, order.candidate]">
+  <ion-card-header class="ion-no-padding ion-padding-start">
+    <ion-item lines="none" *ngIf="company" class="ion-no-padding ion-no-margin">
+      <h5>{{ company.name }}</h5>
+      <app-order-type-badge class="md-padding-end" [order]="order" slot="end"></app-order-type-badge>
+    </ion-item>
+
+    <ion-note mode="md" fill="clear" class="ion-float-right ion-margin-end">
+      <app-order-emergency-until-text [order]="order"></app-order-emergency-until-text>
+    </ion-note>
+  </ion-card-header>
+
+  <ion-item lines="none" class="ion-no-padding ion-margin-start ion-margin-end full-width">
+    <ion-text slot="start">
+      <p class="note">{{ order.location_description.address }} <br> {{ order.location_description.zip_code }} {{
+        order.location_description.city }}</p>
+    </ion-text>
+    <ion-text slot="end" class="ion-text-right" *ngIf="order.finalized_distance != null">
+      <p class="note ion-margin-end">{{ 'Distance' | translate }} <br> {{ order.finalized_distance | round : 2 | number : ''
+        : 'de-DE' | wrap : '' : Distance.serviceProviderDistanceSuffix }}</p>
+    </ion-text>
+    <ion-text slot="end" class="ion-text-right"
+      *ngIf="order.candidate && order.finalized_distance == null && order.candidate.distance != null">
+      <p class="note ion-margin-end">{{ 'Distance' | translate }} <br> {{ order.candidate.distance | round : 2 | number : '' :
+        'de-DE' | wrap : '' :  Distance.serviceProviderDistanceSuffix}}</p>
+    </ion-text>
+  </ion-item>
+
+  <ng-container *ngIf="order.candidate && !order.candidate.loggedInUser">
+    <hr>
+    <ion-item lines="none" class="ion-no-padding ion-margin-start">
+      <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+      <ion-text>
+        {{ order.candidate.first_name }} {{ order.candidate.last_name }}
+      </ion-text>
+    </ion-item>
+  </ng-container>
+</ion-card>

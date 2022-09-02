@@ -1,0 +1,41 @@
+<ion-header>
+  <app-primary-header [title]="'Profile' | translate">
+    <ion-back-button></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="profileForm" class="ion-padding" (ngSubmit)="updateProfile()">
+
+    <mat-form-field *ngIf="user && user.username" appearance="outline" color="primary">
+      <mat-label>{{ 'Username' | translate }}</mat-label>
+      <input class="disabled-input" type="text" matInput [value]="user.username" disabled>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>{{ 'First Name' | translate }}</mat-label>
+      <input type="text" matInput formControlName="first_name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Last Name' | translate }}</mat-label>
+      <input type="text" matInput formControlName="last_name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Phone' | translate }}</mat-label>
+      <input type="text" matInput formControlName="phone">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'E-Mail' | translate }}</mat-label>
+      <input type="email" matInput formControlName="email">
+    </mat-form-field>
+
+    <ion-button [disabled]="!profileForm.valid" expand="block" mode="md" class="ion-margin-top ion-margin-bottom" type="submit">{{ 'Update' | translate }}</ion-button>
+
+    <ion-button routerLink="/auth/password/change" mode="md" expand="block" fill="outline">{{ 'Change Password' | translate }}</ion-button>
+
+  </form>
+
+</ion-content>

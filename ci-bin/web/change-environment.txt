@@ -1,0 +1,41 @@
+#!/bin/sh
+
+set -e
+
+ENVIRONMENT="$1"
+
+# https://stackoverflow.com/a/19932085/5056792
+IFS='/' read -r TAG_NAME TAG_VERSION <<EOF
+$ENVIRONMENT
+EOF
+
+ENVIRONMENT="$TAG_NAME"
+
+SOURCE_FILE="src/environments/environment.$ENVIRONMENT.ts"
+TARGET_FILE="src/environments/environment.ts"
+SOURCE_FILE_NETLIFY="netlify/$ENVIRONMENT.toml"
+TARGET_FILE_NETLIFY="netlify.toml"
+
+usage() {
+    echo "usage: $0 environment" >&2
+}
+
+if [ -z "$ENVIRONMENT" ]; then
+    usage
+    exit 64
+fi
+
+if [ ! -f "$SOURCE_FILE" ]; then
+    echo "$0: $SOURCE_FILE: No such file. Falling back to 'environment.dev.ts'" >&2
+    SOURCE_FILE='src/environments/environment.dev.ts'
+fi
+
+cp -fv "$SOURCE_FILE" "$TARGET_FILE"
+
+if [ ! -f "$SOURCE_FILE_NETLIFY" ]; then
+    echo "$0: $SOURCE_FILE_NETLIFY: No such file." >&2
+    SOURCE_FILE_NETLIFY='netlify/dev.toml'
+    echo "Falling back to '$SOURCE_FILE_NETLIFY'" >&2
+fi
+
+cp -fv "$SOURCE_FILE_NETLIFY" "$TARGET_FILE_NETLIFY"

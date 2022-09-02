@@ -1,0 +1,34 @@
+<ion-card class="ion-no-margin ion-margin-top" [routerLink]="route">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h5 class="ion-no-margin" *ngIf="!order.machine_description">{{ order.location_description.name }}</h5>
+        <h5 class="ion-no-margin" *ngIf="order.machine_description">{{ order.machine_description.type }}</h5>
+      </ion-col>
+      <ion-col>
+        <app-order-time-information-div [order]="order"></app-order-time-information-div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="order['status'] && order['status'] != StatusEnum.Draft">
+      <ion-col>
+        <ion-item lines="none" class="ion-no-padding ion-no-margin">
+          <ion-icon slot="start" color="success" name="checkmark-circle"></ion-icon>
+          <h6 *ngIf="order['status']">{{ orderStatus | translate }}</h6>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-button class="ion-no-margin ion-float-end"  size="medium" mode="md">{{ 'Details' | translate }}</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="order['status'] && order['status'] == StatusEnum.Draft">
+      <ion-col>
+        <ion-button class="ion-no-margin" fill="outline" size="small" mode="md">
+          <ion-icon slot="start" name="create-outline"></ion-icon>
+          {{ 'Update' | translate }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>

@@ -1,0 +1,26 @@
+<ion-header>
+  <app-primary-header [title]="'Login' | translate">
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginForm" class="ion-padding" (ngSubmit)="login()">
+
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>{{ 'Username' | translate }}</mat-label>
+      <input matInput formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Password' | translate }}</mat-label>
+      <input type="password" matInput formControlName="password" (change)="loginForm.get('password').setValue($event.target['value'])">
+    </mat-form-field>
+
+    <ion-button [disabled]="!loginForm.valid" expand="block" mode="md" class="ion-margin-top ion-margin-bottom" type="submit">{{ 'Login' | translate }}</ion-button>
+
+    <ion-button fill="outline" expand="block" mode="md" class="ion-margin-top ion-margin-bottom" [routerLink]="['/auth']" routerLinkActive="router-link-active">{{ 'Register' | translate }}</ion-button>
+
+    <ion-button fill="outline" expand="block" mode="md" class="ion-margin-top ion-margin-bottom" [routerLink]="['/auth', 'password', 'reset']" routerLinkActive="router-link-active">{{ 'Reset Password' | translate }}</ion-button>
+
+  </form>
+</ion-content>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="19.1354mm" height="16.7455mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 743 650"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil17 {fill:#848688}
+    .fil0 {fill:#E0E0E0}
+    .fil4 {fill:#FEFEFE;fill-rule:nonzero}
+    .fil21 {fill:#FEE1C0;fill-rule:nonzero}
+    .fil7 {fill:#F0597C;fill-rule:nonzero}
+    .fil16 {fill:#EBDCE1;fill-rule:nonzero}
+    .fil20 {fill:#E9B77D;fill-rule:nonzero}
+    .fil19 {fill:#DCAA6A;fill-rule:nonzero}
+    .fil8 {fill:#D0BFC5;fill-rule:nonzero}
+    .fil3 {fill:#C3B0B7;fill-rule:nonzero}
+    .fil15 {fill:#9E8B94;fill-rule:nonzero}
+    .fil14 {fill:#8C7A84;fill-rule:nonzero}
+    .fil12 {fill:#786260;fill-rule:nonzero}
+    .fil9 {fill:#84727C;fill-rule:nonzero}
+    .fil18 {fill:#5B4543;fill-rule:nonzero}
+    .fil10 {fill:#776770;fill-rule:nonzero}
+    .fil2 {fill:#423635;fill-rule:nonzero}
+    .fil1 {fill:#61555D;fill-rule:nonzero}
+    .fil5 {fill:#3B444D;fill-rule:nonzero}
+    .fil6 {fill:#32383F;fill-rule:nonzero}
+    .fil11 {fill:#8F190E;fill-rule:nonzero}
+    .fil13 {fill:#A82116;fill-rule:nonzero}
+    .fil22 {fill:#DB2C1C;fill-rule:nonzero}
+   ]]>
+  </style>
+   <mask id="id0">
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="352.011" y1="117.425" x2="317.191" y2="0.244587">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:0; stop-color:white"/>
+  </linearGradient>
+    <rect style="fill:url(#id1)" x="281" width="90.9825" height="123.594"/>
+   </mask>
+ </defs>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0" transform="matrix(0.882305 -0.503661 0.882305 0.503661 -0.000494368 438.075)" width="421" height="421"/>
+  <polygon class="fil1" points="464,392 447,402 447,419 464,410 "/>
+  <path class="fil2" d="M462 407c0,11 7,24 15,29 9,5 16,0 16,-12 0,-11 -7,-24 -16,-29 -8,-5 -15,0 -15,12z"/>
+  <polygon class="fil2" points="476,444 487,437 467,394 456,400 "/>
+  <path class="fil2" d="M450 413c0,11 7,25 15,30 9,5 16,-1 16,-12 0,-11 -7,-25 -16,-30 -8,-5 -15,1 -15,12z"/>
+  <path class="fil3" d="M455 417c0,7 5,16 10,19 6,3 11,0 11,-8 0,-7 -5,-16 -11,-19 -5,-3 -10,0 -10,8z"/>
+  <path class="fil4" d="M458 418c0,6 3,12 7,14 4,2 8,0 8,-5 0,-6 -4,-12 -8,-14 -4,-3 -7,0 -7,5z"/>
+  <path class="fil5" d="M462 420c0,3 1,6 3,7 2,1 4,0 4,-3 0,-2 -2,-5 -4,-6 -2,-1 -3,0 -3,2z"/>
+  <path class="fil5" d="M465 415c0,0 0,1 0,1 1,0 1,0 1,0 0,-1 0,-2 -1,-2 0,0 0,0 0,1z"/>
+  <path class="fil5" d="M460 415c0,0 0,1 1,1 0,0 1,0 1,0 0,-1 -1,-2 -1,-2 -1,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M469 420c0,0 0,1 1,1 0,0 0,0 0,0 0,-1 0,-1 0,-2 -1,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M460 424c0,1 0,1 1,1 0,1 1,0 1,0 0,-1 -1,-1 -1,-1 -1,-1 -1,0 -1,0z"/>
+  <path class="fil5" d="M469 429c0,1 0,1 1,2 0,0 0,0 0,-1 0,0 0,-1 0,-1 -1,0 -1,0 -1,0z"/>
+  <path class="fil5" d="M459 419c0,1 0,1 1,1 0,1 0,0 0,0 0,-1 0,-1 0,-1 -1,-1 -1,0 -1,0z"/>
+  <path class="fil5" d="M470 426c0,0 1,1 1,1 0,0 1,0 1,-1 0,0 -1,-1 -1,-1 0,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M465 429c0,1 0,1 0,2 1,0 1,0 1,-1 0,0 0,-1 -1,-1 0,0 0,0 0,0z"/>
+  <path class="fil6" d="M522 449l12 -7 8 -6c0,0 -6,-3 -7,-3 0,-1 -16,5 -13,16z"/>
+  <polygon class="fil7" points="602,401 668,439 668,398 659,370 "/>
+  <path class="fil8" d="M654 354l0 0c-2,-2 -4,-4 -7,-5l0 -1 -68 40 -21 12 3 23 14 -7 11 29 82 -47c0,0 -6,-22 -11,-35l0 -3c-1,-1 -1,-1 -1,-2 0,0 0,-1 -1,-1l0 0 0 0c0,-1 -1,-2 -1,-3l0 0 0 0 0 0 0 0 0 0 0 0z"/>
+  <polygon class="fil9" points="555,429 517,407 486,425 524,447 "/>
+  <polygon class="fil10" points="486,425 525,447 525,462 486,440 "/>
+  <polygon class="fil9" points="479,386 377,326 346,344 447,404 "/>
+  <polygon class="fil10" points="346,344 447,404 447,419 346,359 "/>
+  <polygon class="fil11" points="581,267 581,377 499,425 499,314 "/>
+  <polygon class="fil12" points="581,369 581,383 499,430 499,416 "/>
+  <path class="fil2" d="M286 306c0,11 7,24 16,29 8,5 15,0 15,-11 0,-12 -7,-25 -15,-30 -9,-5 -16,0 -16,12z"/>
+  <polygon class="fil2" points="300,343 311,336 291,293 281,299 "/>
+  <path class="fil2" d="M275 312c0,12 6,25 15,30 9,5 16,0 16,-12 0,-11 -7,-25 -16,-30 -9,-5 -15,1 -15,12z"/>
+  <path class="fil3" d="M280 316c0,7 5,16 10,19 6,3 10,0 10,-8 0,-7 -4,-16 -10,-19 -5,-3 -10,0 -10,8z"/>
+  <path class="fil4" d="M283 317c0,6 3,12 7,14 4,2 7,0 7,-5 0,-6 -3,-12 -7,-14 -4,-3 -7,0 -7,5z"/>
+  <path class="fil5" d="M287 319c0,3 1,6 3,7 2,1 4,0 4,-3 0,-2 -2,-5 -4,-6 -2,-1 -3,0 -3,2z"/>
+  <path class="fil5" d="M289 314c0,0 1,1 1,1 0,0 1,0 1,0 0,-1 -1,-1 -1,-2 0,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M285 314c0,0 0,1 1,1 0,0 0,0 0,0 0,-1 0,-1 0,-2 -1,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M294 319c0,0 0,1 0,1 1,0 1,0 1,0 0,-1 0,-1 -1,-2 0,0 0,0 0,1z"/>
+  <path class="fil5" d="M285 323c0,1 0,1 1,2 0,0 0,0 0,-1 0,0 0,-1 0,-1 -1,0 -1,0 -1,0z"/>
+  <path class="fil5" d="M294 328c0,1 0,1 0,2 1,0 1,0 1,-1 0,0 0,-1 -1,-1 0,0 0,0 0,0z"/>
+  <path class="fil5" d="M284 318c0,1 0,1 0,1 1,1 1,0 1,0 0,-1 0,-1 -1,-1 0,-1 0,0 0,0z"/>
+  <path class="fil5" d="M295 325c0,0 0,1 1,1 0,0 0,0 0,-1 0,0 0,-1 0,-1 -1,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M289 328c0,1 1,1 1,2 0,0 1,0 1,-1 0,0 -1,-1 -1,-1 0,0 -1,0 -1,0z"/>
+  <path class="fil2" d="M323 327c0,11 7,25 15,30 9,5 16,-1 16,-12 0,-12 -7,-25 -16,-30 -8,-5 -15,0 -15,12z"/>
+  <polygon class="fil2" points="337,364 348,358 328,315 317,321 "/>
+  <path class="fil2" d="M311 333c0,12 7,25 16,30 8,5 15,0 15,-12 0,-11 -7,-24 -15,-29 -9,-5 -16,0 -16,11z"/>
+  <path class="fil3" d="M317 337c0,7 4,16 10,19 5,4 10,0 10,-7 0,-8 -5,-16 -10,-20 -6,-3 -10,1 -10,8z"/>
+  <path class="fil4" d="M319 339c0,5 4,11 8,14 4,2 7,-1 7,-6 0,-5 -3,-12 -7,-14 -4,-2 -8,0 -8,6z"/>
+  <path class="fil5" d="M323 341c0,2 2,5 4,7 2,1 3,-1 3,-3 0,-3 -1,-6 -3,-7 -2,-1 -4,0 -4,3z"/>
+  <path class="fil5" d="M326 335c0,1 0,1 1,2 0,0 0,-1 0,-1 0,0 0,-1 0,-1 -1,-1 -1,0 -1,0z"/>
+  <path class="fil5" d="M321 335c0,1 1,1 1,2 1,0 1,-1 1,-1 0,0 0,-1 -1,-1 0,-1 -1,0 -1,0z"/>
+  <path class="fil5" d="M330 340c0,1 0,1 1,2 0,0 1,0 1,-1 0,0 -1,-1 -1,-1 -1,0 -1,0 -1,0z"/>
+  <path class="fil5" d="M321 345c0,0 1,1 1,1 1,0 1,0 1,-1 0,0 0,-1 -1,-1 0,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M330 350c0,0 0,1 1,1 0,0 1,0 1,-1 0,0 -1,-1 -1,-1 -1,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M320 340c0,0 1,1 1,1 0,0 1,0 1,-1 0,0 -1,-1 -1,-1 0,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M332 346c0,0 0,1 0,1 1,0 1,0 1,0 0,-1 0,-1 -1,-2 0,0 0,1 0,1z"/>
+  <path class="fil5" d="M326 350c0,0 0,1 1,1 0,0 0,0 0,-1 0,0 0,-1 0,-1 -1,0 -1,0 -1,1z"/>
+  <polygon class="fil13" points="266,179 266,290 499,425 499,314 "/>
+  <polygon class="fil2" points="266,282 266,296 499,430 499,416 "/>
+  <path class="fil2" d="M535 448c0,11 7,25 15,30 9,5 16,-1 16,-12 0,-12 -7,-25 -16,-30 -8,-5 -15,0 -15,12z"/>
+  <polygon class="fil2" points="549,485 560,479 540,436 529,442 "/>
+  <path class="fil2" d="M523 454c0,12 7,25 16,30 8,5 15,0 15,-12 0,-11 -7,-24 -15,-29 -9,-5 -16,0 -16,11z"/>
+  <path class="fil3" d="M529 458c0,7 4,16 10,19 5,4 10,0 10,-7 0,-8 -5,-16 -10,-20 -6,-3 -10,1 -10,8z"/>
+  <path class="fil4" d="M531 460c0,5 4,11 8,13 4,3 7,0 7,-5 0,-5 -3,-12 -7,-14 -4,-2 -8,0 -8,6z"/>
+  <path class="fil5" d="M535 462c0,2 2,5 4,6 2,2 3,0 3,-2 0,-3 -1,-6 -3,-7 -2,-1 -4,0 -4,3z"/>
+  <path class="fil5" d="M538 456c0,1 0,1 1,1 0,1 0,0 0,0 0,-1 0,-1 0,-1 -1,-1 -1,0 -1,0z"/>
+  <path class="fil5" d="M533 456c0,1 1,1 1,1 0,1 1,0 1,0 0,-1 -1,-1 -1,-1 0,-1 -1,0 -1,0z"/>
+  <path class="fil5" d="M542 461c0,1 0,1 1,2 0,0 1,-1 1,-1 0,0 -1,-1 -1,-1 -1,0 -1,0 -1,0z"/>
+  <path class="fil5" d="M533 466c0,0 1,1 1,1 0,0 1,0 1,-1 0,0 -1,-1 -1,-1 0,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M542 471c0,0 0,1 1,1 0,0 1,0 1,-1 0,0 -1,-1 -1,-1 -1,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M532 461c0,0 1,1 1,1 0,0 1,0 1,-1 0,0 -1,-1 -1,-1 0,0 -1,0 -1,1z"/>
+  <path class="fil5" d="M544 467c0,0 0,1 0,1 1,0 1,0 1,0 0,-1 0,-1 -1,-2 0,0 0,0 0,1z"/>
+  <path class="fil5" d="M538 471c0,0 0,1 1,1 0,0 0,0 0,-1 0,0 0,-1 0,-1 -1,0 -1,0 -1,1z"/>
+  <path class="fil14" d="M507 362l59 34c4,2 7,6 9,11l11 38 0 41 -24 -14 -2 -1c-2,-13 -10,-26 -19,-31 -9,-6 -17,-1 -19,9l-2 -1 -13 -8 0 -78z"/>
+  <polygon class="fil3" points="668,398 586,445 586,486 668,439 "/>
+  <path class="fil5" d="M650 417l-46 27c-2,1 -3,3 -4,5l54 -31c-1,-1 -2,-2 -4,-1z"/>
+  <polygon class="fil5" points="600,459 654,427 654,425 600,457 "/>
+  <path class="fil5" d="M604 466l46 -27c2,-1 3,-2 4,-4l-54 31c1,1 2,1 4,0z"/>
+  <path class="fil3" d="M600 449c0,1 0,2 0,3l54 -32c0,-1 0,-2 0,-2l-54 31z"/>
+  <polygon class="fil3" points="600,457 654,425 654,423 600,454 "/>
+  <path class="fil3" d="M600 466l54 -31c0,-1 0,-2 0,-3l-54 32c0,1 0,1 0,2z"/>
+  <path class="fil4" d="M595 455c0,3 -1,6 -3,7 -2,2 -4,0 -4,-3 0,-2 2,-5 4,-7 2,-1 3,0 3,3z"/>
+  <path class="fil4" d="M594 467c0,2 -2,4 -3,5 -2,1 -3,0 -3,-2 0,-2 1,-5 3,-6 1,0 3,1 3,3z"/>
+  <path class="fil4" d="M667 414c0,3 -2,6 -4,7 -2,1 -4,0 -4,-3 0,-3 2,-6 4,-7 2,-1 4,0 4,3z"/>
+  <path class="fil4" d="M665 425c0,2 -1,5 -3,6 -2,1 -3,0 -3,-2 0,-2 1,-5 3,-6 2,-1 3,0 3,2z"/>
+  <g>
+   <path class="fil2" d="M662 390l-8 -27c-1,-2 -2,-3 -3,-3l-2 1 -67 38c-3,1 -4,5 -3,8l0 0 8 27 0 1c1,3 4,4 7,2l65 -37c3,-2 4,-6 3,-9l0 -1zm-8 5c-1,-3 -2,-6 -3,-9 -4,-13 -13,-13 -21,-8 -6,4 -34,20 -51,29l75 -12zm0 0l-67 39 67 -39z"/>
+  </g>
+  <path class="fil15" d="M570 474c0,0 0,6 0,8 0,4 5,6 5,6l1 -9 -6 -5z"/>
+  <polygon class="fil3" points="586,487 586,495 600,487 600,479 "/>
+  <polygon class="fil3" points="673,436 659,445 659,453 673,445 "/>
+  <polygon class="fil5" points="600,479 600,487 659,453 659,445 "/>
+  <polygon class="fil4" points="649,452 612,473 612,479 649,457 "/>
+  <path class="fil15" d="M586 487l0 8 -10 -6c-2,-1 -3,-2 -3,-4l0 -6 13 8z"/>
+  <path class="fil16" d="M570 474l16 9 82 -47 0 -2 5 2 -87 51 -11 -6c-1,-1 -3,-2 -4,-4l-1 -3z"/>
+  <path class="fil4" d="M609 478c0,2 -1,3 -3,4 -1,1 -2,0 -2,-2 0,-1 1,-3 2,-4 2,0 3,0 3,2z"/>
+  <path class="fil4" d="M657 450c0,2 -1,4 -3,4 -1,1 -2,0 -2,-1 0,-2 1,-4 2,-4 2,-1 3,0 3,1z"/>
+  <polygon class="fil3" points="565,396 507,362 589,314 647,348 "/>
+  <path class="fil2" d="M553 397c0,0 -1,1 -1,1l0 19c0,2 2,5 3,6l11 6 1 0c1,0 2,-1 2,-2l0 -19c0,-2 -1,-5 -3,-6l-11 -6c-1,-1 -2,0 -2,1z"/>
+  <polygon class="fil12" points="568,269 344,140 348,137 573,267 "/>
+  <polygon class="fil12" points="499,309 274,180 278,177 503,307 "/>
+  <polygon class="fil12" points="581,267 581,302 499,349 499,314 "/>
+  <polygon class="fil2" points="266,179 266,214 499,349 499,314 "/>
+  <path class="fil15" d="M561 381l-46 -24 0 -11c0,0 16,8 29,14 13,6 17,21 17,21z"/>
+  <path class="fil16" d="M561 381c0,0 -2,-8 -12,-16 -8,-6 -34,-19 -34,-19l65 -37c0,0 24,13 33,19 11,8 13,16 13,16l-65 37z"/>
+  <path class="fil17" style="mask:url(#id0)" d="M359 98c-22,-17 40,-21 -3,-62 -18,-17 -17,-39 -42,-35 -14,2 -43,10 -29,29 14,17 27,-2 37,12 3,4 1,9 -10,12 -7,2 -26,20 3,24 22,2 -21,3 8,21 19,12 1,0 -1,14 -1,3 10,12 14,6 2,-4 15,3 22,4 17,4 21,-10 1,-25z"/>
+  <polygon class="fil18" points="499,285 266,150 348,103 581,238 "/>
+  <polygon class="fil12" points="581,237 581,272 499,320 499,285 "/>
+  <polygon class="fil2" points="266,150 266,185 499,320 499,284 "/>
+  <polygon class="fil5" points="166,360 166,379 180,371 180,352 "/>
+  <polygon class="fil19" points="218,417 218,383 273,351 273,385 "/>
+  <polygon class="fil20" points="218,417 218,383 154,346 154,380 "/>
+  <polygon class="fil21" points="154,346 218,383 273,351 209,314 "/>
+  <polygon class="fil5" points="222,411 222,407 241,397 241,400 "/>
+  <polygon class="fil5" points="222,405 222,401 241,390 241,394 "/>
+  <polygon class="fil5" points="168,360 168,376 157,369 157,353 "/>
+  <polygon class="fil4" points="214,386 214,406 186,389 186,370 "/>
+  <polygon class="fil5" points="210,392 210,388 188,375 188,380 "/>
+  <polygon class="fil13" points="259,377 240,388 240,370 259,359 "/>
+  <polygon class="fil22" points="259,359 195,322 176,333 240,370 "/>
+  <polygon class="fil5" points="170,319 170,338 183,330 183,311 "/>
+  <polygon class="fil19" points="222,376 222,342 277,310 277,344 "/>
+  <polygon class="fil20" points="222,376 222,342 158,305 158,339 "/>
+  <polygon class="fil21" points="158,305 222,342 277,310 213,273 "/>
+  <polygon class="fil5" points="226,370 226,366 244,356 244,359 "/>
+  <polygon class="fil5" points="226,364 226,360 244,349 244,353 "/>
+  <polygon class="fil5" points="171,319 171,335 160,328 160,312 "/>
+  <polygon class="fil4" points="217,345 217,364 189,348 189,329 "/>
+  <polygon class="fil5" points="214,351 214,347 192,334 192,338 "/>
+  <polygon class="fil13" points="263,336 244,347 244,329 263,318 "/>
+  <polygon class="fil22" points="263,318 199,281 180,292 244,329 "/>
+  <polygon class="fil5" points="160,286 160,305 174,297 174,278 "/>
+  <polygon class="fil19" points="212,344 212,309 267,278 267,312 "/>
+  <polygon class="fil20" points="212,344 212,309 148,272 148,307 "/>
+  <polygon class="fil21" points="148,272 212,309 267,278 203,241 "/>
+  <polygon class="fil5" points="216,337 216,334 235,323 235,327 "/>
+  <polygon class="fil5" points="216,331 216,328 235,317 235,320 "/>
+  <polygon class="fil5" points="162,286 162,302 151,296 151,280 "/>
+  <polygon class="fil4" points="208,313 208,332 180,316 180,297 "/>
+  <polygon class="fil5" points="204,319 204,314 182,301 182,306 "/>
+  <polygon class="fil13" points="253,304 234,315 234,297 253,286 "/>
+  <polygon class="fil22" points="253,286 189,249 170,260 234,297 "/>
+  <polygon class="fil5" points="164,245 164,264 177,256 177,237 "/>
+  <polygon class="fil19" points="216,303 216,268 271,237 271,271 "/>
+  <polygon class="fil20" points="216,303 216,268 152,231 152,266 "/>
+  <polygon class="fil21" points="152,231 216,268 271,237 207,200 "/>
+  <polygon class="fil5" points="220,296 220,293 238,282 238,286 "/>
+  <polygon class="fil5" points="220,290 220,287 238,276 238,279 "/>
+  <polygon class="fil5" points="165,245 165,261 154,255 154,239 "/>
+  <polygon class="fil4" points="211,272 211,291 183,275 183,256 "/>
+  <polygon class="fil5" points="208,278 208,273 186,260 186,265 "/>
+  <polygon class="fil13" points="257,263 238,274 238,256 257,245 "/>
+  <polygon class="fil22" points="257,245 193,208 174,219 238,256 "/>
+  <polygon class="fil5" points="166,414 166,433 152,425 152,406 "/>
+  <polygon class="fil19" points="114,472 114,437 59,406 59,440 "/>
+  <polygon class="fil20" points="114,472 114,437 178,400 178,435 "/>
+  <polygon class="fil21" points="178,400 114,437 59,406 123,369 "/>
+  <polygon class="fil5" points="110,465 110,462 91,451 91,455 "/>
+  <polygon class="fil5" points="110,459 110,456 91,445 91,448 "/>
+  <polygon class="fil5" points="164,414 164,430 175,424 175,408 "/>
+  <polygon class="fil4" points="118,441 118,460 146,444 146,425 "/>
+  <polygon class="fil5" points="121,447 121,442 144,429 144,434 "/>
+  <polygon class="fil13" points="73,432 92,443 92,425 73,414 "/>
+  <polygon class="fil22" points="73,414 137,377 156,388 92,425 "/>
+  <polygon class="fil5" points="162,373 162,392 148,384 148,365 "/>
+  <polygon class="fil19" points="110,431 110,396 55,365 55,399 "/>
+  <polygon class="fil20" points="110,431 110,396 174,359 174,394 "/>
+  <polygon class="fil21" points="174,359 110,396 55,365 119,328 "/>
+  <polygon class="fil5" points="106,424 106,421 88,410 88,414 "/>
+  <polygon class="fil5" points="106,418 106,415 88,404 88,407 "/>
+  <polygon class="fil5" points="160,373 160,389 171,383 171,367 "/>
+  <polygon class="fil4" points="114,400 114,419 142,403 142,384 "/>
+  <polygon class="fil5" points="118,406 118,401 140,388 140,393 "/>
+  <polygon class="fil13" points="69,391 88,402 88,384 69,373 "/>
+  <polygon class="fil22" points="69,373 133,336 152,347 88,384 "/>
+  <polygon class="fil5" points="172,341 172,360 158,352 158,333 "/>
+  <polygon class="fil19" points="120,398 120,364 65,332 65,366 "/>
+  <polygon class="fil20" points="120,398 120,364 184,327 184,361 "/>
+  <polygon class="fil21" points="184,327 120,364 65,332 129,295 "/>
+  <polygon class="fil5" points="116,392 116,388 97,378 97,381 "/>
+  <polygon class="fil5" points="116,386 116,382 97,371 97,375 "/>
+  <polygon class="fil5" points="170,341 170,357 181,350 181,334 "/>
+  <polygon class="fil4" points="124,367 124,386 152,370 152,351 "/>
+  <polygon class="fil5" points="127,373 127,369 150,356 150,360 "/>
+  <polygon class="fil13" points="79,358 98,369 98,351 79,340 "/>
+  <polygon class="fil22" points="79,340 143,303 162,314 98,351 "/>
+  <polygon class="fil5" points="168,300 168,319 154,311 154,292 "/>
+  <polygon class="fil19" points="116,357 116,323 61,291 61,325 "/>
+  <polygon class="fil20" points="116,357 116,323 180,286 180,320 "/>
+  <polygon class="fil21" points="180,286 116,323 61,291 125,254 "/>
+  <polygon class="fil5" points="112,351 112,347 94,337 94,340 "/>
+  <polygon class="fil5" points="112,345 112,341 94,330 94,334 "/>
+  <polygon class="fil5" points="166,300 166,316 177,309 177,293 "/>
+  <polygon class="fil4" points="120,326 120,345 148,329 148,310 "/>
+  <polygon class="fil5" points="124,332 124,328 146,315 146,319 "/>
+  <polygon class="fil13" points="75,317 94,328 94,310 75,299 "/>
+  <polygon class="fil22" points="75,299 139,262 158,273 94,310 "/>
+  <polygon class="fil5" points="211,233 211,252 197,244 197,225 "/>
+  <polygon class="fil19" points="159,290 159,256 104,224 104,259 "/>
+  <polygon class="fil20" points="159,290 159,256 223,219 223,253 "/>
+  <polygon class="fil21" points="223,219 159,256 104,224 168,187 "/>
+  <polygon class="fil5" points="155,284 155,281 136,270 136,274 "/>
+  <polygon class="fil5" points="155,278 155,274 136,264 136,267 "/>
+  <polygon class="fil5" points="209,233 209,249 220,243 220,227 "/>
+  <polygon class="fil4" points="163,260 163,279 191,263 191,243 "/>
+  <polygon class="fil5" points="166,266 166,261 188,248 188,253 "/>
+  <polygon class="fil13" points="118,250 137,261 137,243 118,232 "/>
+  <polygon class="fil22" points="118,232 182,195 201,206 137,243 "/>
+  <polygon class="fil5" points="207,192 207,211 193,203 193,184 "/>
+  <polygon class="fil19" points="155,249 155,215 100,183 100,218 "/>
+  <polygon class="fil20" points="155,249 155,215 219,178 219,212 "/>
+  <polygon class="fil21" points="219,178 155,215 100,183 164,146 "/>
+  <polygon class="fil5" points="151,243 151,240 132,229 132,232 "/>
+  <polygon class="fil5" points="151,237 151,233 132,223 132,226 "/>
+  <polygon class="fil5" points="205,192 205,208 216,202 216,186 "/>
+  <polygon class="fil4" points="159,219 159,238 187,221 187,202 "/>
+  <polygon class="fil5" points="163,225 163,220 185,207 185,212 "/>
+  <polygon class="fil13" points="114,209 133,220 133,202 114,191 "/>
+  <polygon class="fil22" points="114,191 178,154 197,165 133,202 "/>
+  <polygon class="fil5" points="217,159 217,178 203,170 203,151 "/>
+  <polygon class="fil19" points="165,217 165,183 110,151 110,185 "/>
+  <polygon class="fil20" points="165,217 165,183 229,146 229,180 "/>
+  <polygon class="fil21" points="229,146 165,183 110,151 174,114 "/>
+  <polygon class="fil5" points="161,211 161,207 142,196 142,200 "/>
+  <polygon class="fil5" points="161,204 161,201 142,190 142,194 "/>
+  <polygon class="fil5" points="215,159 215,175 226,169 226,153 "/>
+  <polygon class="fil4" points="169,186 169,205 197,189 197,170 "/>
+  <polygon class="fil5" points="172,192 172,187 194,175 194,179 "/>
+  <polygon class="fil13" points="124,177 143,188 143,170 124,159 "/>
+  <polygon class="fil22" points="124,159 188,122 207,133 143,170 "/>
+  <polygon class="fil5" points="213,118 213,137 199,129 199,110 "/>
+  <polygon class="fil19" points="161,176 161,142 106,110 106,144 "/>
+  <polygon class="fil20" points="161,176 161,142 225,105 225,139 "/>
+  <polygon class="fil21" points="225,105 161,142 106,110 170,73 "/>
+  <polygon class="fil5" points="157,170 157,166 138,155 138,159 "/>
+  <polygon class="fil5" points="157,163 157,160 138,149 138,153 "/>
+  <polygon class="fil5" points="211,118 211,134 222,128 222,112 "/>
+  <polygon class="fil4" points="165,145 165,164 193,148 193,129 "/>
+  <polygon class="fil5" points="169,151 169,146 191,134 191,138 "/>
+  <polygon class="fil13" points="120,136 139,147 139,129 120,118 "/>
+  <polygon class="fil22" points="120,118 184,81 203,92 139,129 "/>
+  <polygon class="fil5" points="198,86 198,105 184,97 184,78 "/>
+  <polygon class="fil19" points="146,144 146,109 91,78 91,112 "/>
+  <polygon class="fil20" points="146,144 146,109 210,72 210,107 "/>
+  <polygon class="fil21" points="210,72 146,109 91,78 155,41 "/>
+  <polygon class="fil5" points="141,137 141,134 123,123 123,127 "/>
+  <polygon class="fil5" points="141,131 141,128 123,117 123,120 "/>
+  <polygon class="fil5" points="196,86 196,102 207,96 207,80 "/>
+  <polygon class="fil4" points="150,113 150,132 178,116 178,97 "/>
+  <polygon class="fil5" points="153,119 153,114 175,101 175,106 "/>
+  <polygon class="fil13" points="105,104 124,115 124,97 105,86 "/>
+  <polygon class="fil22" points="105,86 169,49 188,60 124,97 "/>
+  <polygon class="fil19" points="142,103 142,68 87,37 87,71 "/>
+  <polygon class="fil20" points="142,103 142,68 206,31 206,66 "/>
+  <polygon class="fil5" points="138,96 138,93 119,82 119,86 "/>
+  <polygon class="fil5" points="138,90 138,87 119,76 119,79 "/>
+  <polygon class="fil4" points="146,72 146,91 174,75 174,56 "/>
+  <polygon class="fil5" points="150,78 150,73 172,60 172,65 "/>
+  <polygon class="fil13" points="101,63 120,74 120,56 101,45 "/>
+  <polygon class="fil21" points="206,32 142,69 87,37 151,0 "/>
+  <polygon class="fil22" points="101,45 165,8 184,19 120,56 "/>
+  <polygon class="fil5" points="310,439 310,455 299,449 299,433 "/>
+  <polygon class="fil5" points="308,493 308,512 294,504 294,485 "/>
+  <polygon class="fil19" points="256,551 256,517 201,485 201,519 "/>
+  <polygon class="fil20" points="256,551 256,517 320,479 320,514 "/>
+  <polygon class="fil21" points="320,479 256,517 201,485 265,448 "/>
+  <polygon class="fil5" points="252,545 252,541 233,530 233,534 "/>
+  <polygon class="fil5" points="252,538 252,535 233,524 233,528 "/>
+  <polygon class="fil5" points="306,493 306,509 317,503 317,487 "/>
+  <polygon class="fil4" points="260,520 260,539 288,523 288,504 "/>
+  <polygon class="fil5" points="264,526 264,521 286,509 286,513 "/>
+  <polygon class="fil13" points="215,511 234,522 234,504 215,493 "/>
+  <polygon class="fil22" points="215,493 279,456 298,467 234,504 "/>
+  <polygon class="fil5" points="304,452 304,471 291,463 291,444 "/>
+  <polygon class="fil19" points="252,510 252,476 197,444 197,478 "/>
+  <polygon class="fil20" points="252,510 252,476 316,438 316,473 "/>
+  <polygon class="fil21" points="316,438 252,476 197,444 261,407 "/>
+  <polygon class="fil5" points="248,504 248,500 230,489 230,493 "/>
+  <polygon class="fil5" points="248,497 248,494 230,483 230,487 "/>
+  <polygon class="fil5" points="303,452 303,468 314,462 314,446 "/>
+  <polygon class="fil4" points="257,479 257,498 285,482 285,463 "/>
+  <polygon class="fil5" points="260,485 260,480 282,468 282,472 "/>
+  <polygon class="fil13" points="211,470 230,481 230,463 211,452 "/>
+  <polygon class="fil22" points="211,452 275,415 294,426 230,463 "/>
+ </g>
+</svg>

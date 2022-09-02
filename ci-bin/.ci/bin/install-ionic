@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -e -x
+
+npm list -g @ionic/cli@~6.1.0 || npm install -g @ionic/cli@~6.1.0
+npm list -g @angular/cli@^8.2.14 || npm install -g @angular/cli@^8.2.14

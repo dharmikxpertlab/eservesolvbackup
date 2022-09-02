@@ -1,0 +1,32 @@
+.document-item {
+    width: 60px;
+    height: 62px;
+    padding: 2px;
+    border: 1px solid #E5E5E5;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+.document-item:nth-child(4n) {
+    page-break-after: always; /* CSS 2.1 syntax */
+    break-after: always; /* New syntax */
+  }
+
+.document-items {
+    display: flex;
+}
+
+.delete-button {
+    text-align: center;
+    font-size: 16px;
+}
+
+ion-icon {
+    height: 25px;
+    width: 25px;
+}
+
+ion-img {
+    height: 100%;
+    max-height: 62px;
+}

@@ -1,0 +1,11 @@
+<ion-header>
+  <app-primary-header [title]="'Search Results' | translate">
+    <ion-back-button [defaultHref]="'/customers' + '/search/' + orderId + '/results'"></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="serviceProvider">
+
+  <app-search-result-item [detail]="true" [serviceProvider]="serviceProvider"></app-search-result-item>
+
+</ion-content>

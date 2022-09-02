@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border" translucent="true">
+  <app-primary-header menuButtonColor="'primary'" toolbarColor="'light'">
+  </app-primary-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-eservsol-header></app-eservsol-header>
+
+  <h4 class="ion-no-margin ion-margin-bottom">{{ 'Registration' | translate }}</h4>
+
+  <ion-grid>
+    <div class="ion-text-center ion-margin-top">
+      <ion-text>{{ 'How can we help you?' | translate }}</ion-text>
+    </div>
+
+    <div class="ion-text-center ion-margin" [routerLink]="['/auth', 'register']" [state]="{
+      role: Roles.Customer
+    }">
+      <ion-img src="assets/images/technician-1.svg"></ion-img>
+      <ion-text class="ion-padding">{{ 'Are you looking for a service technician?' | translate }}</ion-text>
+    </div>
+
+    <br>
+
+    <div class="ion-text-center ion-margin" [routerLink]="['/auth', 'register']" [state]="{
+      role: Roles.SpEmployee
+    }">
+      <ion-img src="assets/images/technician-2.svg"></ion-img>
+      <ion-text class="ion-padding">{{ 'Are you looking for new orders?' | translate }}</ion-text>
+    </div>
+
+  </ion-grid>
+</ion-content>

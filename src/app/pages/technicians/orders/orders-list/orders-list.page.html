@@ -1,0 +1,13 @@
+<ion-header>
+  <app-primary-header [title]="'Order Overview' | translate">
+    <ion-back-button defaultHref="/technicians/dashboard"></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+    <ng-container *ngIf="orders">
+      <ng-container *ngFor="let item of OrderListSections; let i = index">
+        <app-order-list-accordion [user]="RolesEnum.SpEmployee" [expanded]="item.name == section ? true : false" [mode]="item" [orders]="orders"></app-order-list-accordion>
+      </ng-container>
+    </ng-container>
+</ion-content>

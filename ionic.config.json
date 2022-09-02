@@ -1,0 +1,8 @@
+{
+  "name": "easy-service-solution",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

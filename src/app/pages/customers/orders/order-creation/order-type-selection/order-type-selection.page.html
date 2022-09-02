@@ -1,0 +1,19 @@
+<ion-header>
+  <app-primary-header [title]="'Create Order' | translate">
+    <ion-back-button></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <ion-text class="ion-text-center">
+    <h6>{{ 'What kind of order do you want to create?' | translate }}</h6>
+  </ion-text>
+
+  <ion-list lines="none" class="ion-padding">
+    <ng-container *ngFor="let item of OrderTypes; let index = index">
+      <ion-item class="ion-no-padding" detail="false" [routerLink]="['/customers', 'orders', 'new', item.id, 'department']"  [disabled]="index == 2" class="ion-padding-top">
+        <app-order-type-option [orderType]="item"></app-order-type-option>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content>

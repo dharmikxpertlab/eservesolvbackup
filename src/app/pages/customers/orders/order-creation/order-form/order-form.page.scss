@@ -1,0 +1,23 @@
+ion-img {
+    height: 100%;
+    object-fit: contain;
+}
+
+ion-note {
+    font-size: 11px;
+}
+
+.upload-button {
+    ion-label {
+        white-space: break-spaces;
+        text-align: left;
+        text-transform: none;
+        letter-spacing: normal;
+        margin-top: 10px;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+
+    --box-shadow: none;
+    height: auto;
+}

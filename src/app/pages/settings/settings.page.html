@@ -1,0 +1,41 @@
+<ion-header>
+  <app-primary-header [title]="'Settings' | translate">
+    <ion-back-button></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item-divider mode="ios">
+      <ion-label class="ion-margin-top ion-margin-bottom">
+        {{ 'Preferences' | translate }}
+      </ion-label>
+    </ion-item-divider>
+
+    <ion-item *ngIf="languages.length > 1" lines="none">
+      <ion-label>{{ 'Language' | translate }}</ion-label>
+      <ion-select mode="ios" interface="popover" [(ngModel)]="selectedLanguage" (ionChange)="applyLanguage()">
+        <ion-select-option *ngFor="let lang of languages" [value]="lang.code">{{lang.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item-divider mode="ios">
+      <ion-label class="ion-margin-top ion-margin-bottom">
+        {{ 'Documents' | translate }}
+      </ion-label>
+    </ion-item-divider>
+
+    <ion-item class="ion-no-padding">
+      <ion-button fill="clear" (click)="openUrl('https://eservsol.com/agb/')">
+        {{ 'Terms and Conditions' | translate }}
+      </ion-button>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-button fill="clear" (click)="openUrl('https://eservsol.com/datenschutzbestimmungen-app/')">
+        {{ 'Privacy Policy' | translate }}
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <app-primary-header [title]="'Search Results' | translate">
+    <ion-back-button defaultHref="/customers/orders/new" (click)="searchService.selectedCandidates.next([])"></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <div  class="ion-padding">
+    <h6>{{ 'Procurement' | translate }}</h6>
+
+    <p>{{ 'Select up to 3 from the following service providers. All selected service providers have the opportunity to accept the order by reacting quickly.' | translate }}</p>
+
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col class="ion-no-padding">
+          <app-sorting
+            [fields]="[
+              {
+                text: 'Distance',
+                value: 'distance'
+              },
+              {
+                text: 'Rate',
+                value: 'rate'
+              }
+            ]"
+            (fieldSelectionEvent)="applyFilter($event['value'])">
+          </app-sorting>
+        </ion-col>
+        <ion-col>
+          <ion-button class="confirm-btn" (click)="selectCandidates()" [disabled]="!searchService.isCandidateSelectionValid()" size="medium" mode="md">{{ 'Confirm Selection' | translate }}</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-note class="ion-margin-start">*{{ 'NOTE_SEARCH_RESULTS' | translate }}</ion-note>
+  <ion-list lines="none" class="ion-no-margin">
+    <ion-card class="ion-padding" *ngFor="let item of candidates">
+      <app-search-result-item [serviceProvider]="item"></app-search-result-item>
+    </ion-card>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,10 @@
+<ion-toolbar [color]="toolbarColor">
+  <ion-buttons slot="start">
+    <ng-content></ng-content>
+  </ion-buttons>
+
+  <ion-buttons slot="end">
+    <ion-menu-button [color]="menuButtonColor" auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+  <ion-title>{{ title | translate  }}</ion-title>
+</ion-toolbar>

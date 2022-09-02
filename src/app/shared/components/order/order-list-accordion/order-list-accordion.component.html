@@ -1,0 +1,29 @@
+<ion-list class="ion-padding">
+
+  <ion-item-divider mode="ios" (click)="toggleExpansion()">
+    <ion-label>
+      {{ mode.name | translate }}
+    </ion-label>
+    <ion-icon slot="end" *ngIf="!expanded" size="large" name="chevron-down"></ion-icon>
+    <ion-icon slot="end" *ngIf="expanded" size="large" name="chevron-up"></ion-icon>
+  </ion-item-divider>
+
+  <ng-container *ngIf="expanded">
+
+    <ng-container *ngIf="user == RolesEnum.Customer">
+      <app-order-small-card [order]="order" *ngFor="let order of orders | filterByKey : 'status' : mode.order_states | orderByKey : 'id' : 'desc'"></app-order-small-card>
+    </ng-container>
+
+
+    <ng-container *ngIf="user == RolesEnum.SpEmployee">
+
+      <ng-container *ngFor="let order of orders | filterByKey : 'status' : mode.order_states | orderByKey : 'id' : 'desc'">
+        <app-order-detail-item-small [order]="order" *ngIf="order.completed_at"></app-order-detail-item-small>
+        <app-order-detail-item-large [order]="order" *ngIf="!order.completed_at"></app-order-detail-item-large>
+      </ng-container>
+
+    </ng-container>
+
+  </ng-container>
+
+</ion-list>

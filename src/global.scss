@@ -1,0 +1,179 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import 'font.css';
+@import '~material-icons/iconfont/material-icons.css';
+
+
+ion-header {
+    height: fit-content;
+}
+
+ion-input{
+    border: solid 1px red;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+* {
+    font-family: Roboto;
+}
+
+.mat-expansion-panel-header {
+    background: var(--ion-color-secondary)  !important;
+}
+
+.mat-expansion-panel-body {
+    display: none;
+}
+
+.strong {
+    font-weight: 500;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-suffix {
+    top: 0 !important;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+app-order-form .cdk-focused {
+    background-color: initial  !important;
+}
+
+.confirm-search-candidates-popover {
+    --width: 250px;
+    --backdrop-opacity: 0.8;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+app-order-status-stepper .checkbox-checked.checkbox-disabled {
+    opacity: 1;
+}
+
+.light {
+    font-weight: 300;
+}
+
+body.light app-order-status-stepper {
+    .mat-step-icon.mat-step-icon-state-number {
+        background-color: white !important;
+        border: 1px solid black !important;
+
+        &.mat-step-icon-selected {
+            background-color: transparent !important;
+            border: 2px solid black !important;
+            color: black !important;
+        }
+    }
+
+    .mat-step-icon.mat-step-icon-state-edit {
+        background-color: transparent !important;
+        border: 2px solid black !important;
+        color: black !important;
+    }
+}
+
+body.light, body.dark {
+    app-order-status-stepper {
+        .mat-step-icon.mat-step-icon-state-done {
+            background-color: var(--ion-color-success) !important;
+        }
+
+        mat-vertical-stepper.CUSTOMER {
+
+            pointer-events: none;
+
+            .mat-vertical-content {
+                padding: 0;
+            }
+        }
+    }
+}
+
+body.dark app-order-status-stepper {
+    .mat-step-icon.mat-step-icon-state-number {
+        background-color: black !important;
+        border: 1px solid white !important;
+
+        &.mat-step-icon-selected {
+            background-color: transparent !important;
+            border: 2px solid white !important;
+            color: white !important;
+        }
+    }
+
+    .mat-step-icon.mat-step-icon-state-edit {
+        background-color: transparent !important;
+        border: 2px solid white !important;
+        color: white !important;
+    }
+}
+
+
+.margin-auto {
+    margin: auto;
+}
+
+hr {
+    background: rgb(233, 233, 233);
+    margin: 0;
+}
+
+ion-card ion-card-header ion-item {
+    --ion-safe-area-right: 0;
+}
+
+.notification-toast {
+    --border-color: var(--ion-color-primary);
+    --border-width: 4px;
+    --border-style: solid;
+}
+
+.md-padding-end {
+    padding-right: 16px;
+}
+
+.disabled-input.mat-input-element:disabled {
+    color: rgb(127, 127, 127) !important;
+}

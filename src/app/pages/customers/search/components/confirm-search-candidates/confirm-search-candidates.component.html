@@ -1,0 +1,11 @@
+<div class="ion-padding ion-text-center">
+  <ion-text>
+    <h3>{{ 'Binding order' | translate }}</h3>
+  </ion-text>
+
+  <p>{{ 'I hereby agree to the terms and conditions and would now like to make a binding booking of a technician' | translate }}</p>
+
+  <ion-button mode="md" color="primary" (click)="popoverController.dismiss({ approved: true })">
+    {{ 'Order to tender' | translate }}
+  </ion-button>
+</div>

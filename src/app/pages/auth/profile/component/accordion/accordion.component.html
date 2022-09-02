@@ -1,0 +1,35 @@
+<ion-list [class.ion-margin-top]="!isSubGroup" [class.ion-margin-bottom]="!isSubGroup">
+  <ion-item-divider class="ion-no-padding dark-underline" (click)="toggleExpansion()">
+    <ion-label class="ion-padding-horizontal" [class.ion-padding-vertical]="!isSubGroup">
+      <ng-container *ngIf="titleIndex">
+        {{ titleIndex }}.
+      </ng-container>
+      {{ netTitle | translate }}
+    </ion-label>
+    <ion-icon slot="end" *ngIf="!expanded" size="small" name="chevron-down"></ion-icon>
+    <ion-icon slot="end" *ngIf="expanded" size="small" name="chevron-up"></ion-icon>
+  </ion-item-divider>
+
+  <ng-container *ngIf="expanded">
+    <ng-container *ngIf="!shouldSubGroup">
+      <ion-item *ngFor="let entry of checkboxOptions">
+        <ion-label>{{ entry.name | translate }}</ion-label>
+        <ion-checkbox mode="md" (ionChange)="isChanged()" slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+      </ion-item>
+    </ng-container>
+
+    <ng-container *ngIf="shouldSubGroup">
+      <ng-container *ngFor="let item of groups">
+        <app-accordion
+          (optionsChangeEvent)="isChanged()"
+          [values]="values"
+          [mode]="mode"
+          [checkboxOptions]="item[1]"
+          [title]="groupTitles[item[0]]"
+          [useSubGroups]="false"
+          [isSubGroup]="true">
+        </app-accordion>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</ion-list>

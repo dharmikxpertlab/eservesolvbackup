@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e -x
+
+.ci/bin/web/change-environment "$BRANCH"
+
+exec .ci/bin/build-dist --configuration=production "$@"

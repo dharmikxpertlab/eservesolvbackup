@@ -1,0 +1,51 @@
+<ion-header>
+  <app-primary-header [title]="'Company Profile' | translate">
+    <ion-back-button></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <div class="ion-margin">
+    <ion-avatar>
+      <img [src]="companyForm.get('logo').value">
+    </ion-avatar>
+  </div>
+
+  <ion-list *ngIf="company">
+    <ion-item lines="none">
+      <ion-label>
+        <p>{{ 'Company' | translate }}</p>
+        <h3>{{ company.name }}</h3>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>
+        <p>{{ 'Street / Housenumber' | translate }}</p>
+        <h3>{{ company.address }}</h3>
+      </ion-label>
+    </ion-item>
+
+
+
+    <ion-item lines="none">
+      <ion-label slot="start">
+        <p>{{ 'Zip Code' | translate }}</p>
+        <h3>{{ company.zip_code }}</h3>
+      </ion-label>
+      <ion-label slot="start">
+        <p>{{ 'City' | translate }}</p>
+        <h3>{{ company.city }}</h3>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>
+        <p>{{ 'Tax ID' | translate }}</p>
+        <h3>{{ company.tax_id }}</h3>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

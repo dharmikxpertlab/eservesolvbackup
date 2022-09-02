@@ -1,0 +1,2 @@
+<img class="margin-auto" [src]="user.profile.profile_picture" *ngIf="user.profile && user.profile.profile_picture" />
+<img class="margin-auto" src="assets/icon/person-circle-outline.jpeg" *ngIf="!user.profile || !user.profile.profile_picture" />

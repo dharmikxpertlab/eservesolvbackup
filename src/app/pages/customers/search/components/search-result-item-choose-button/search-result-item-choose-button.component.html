@@ -1,0 +1,13 @@
+<ion-button [expand]="expand" mode="md" size="medium" slot="end" fill="outline" [color]="searchService.isCandidateChoosen(candidate.id) ? 'success' : 'primary'" (click)="choose()">
+
+  <ng-container *ngIf="!searchService.isCandidateChoosen(candidate.id)">
+    <mat-icon aria-hidden="false">add</mat-icon>
+    {{ 'Choose' | translate }}
+  </ng-container>
+
+  <ng-container *ngIf="searchService.isCandidateChoosen(candidate.id)">
+    <mat-icon aria-hidden="false">check</mat-icon>
+    {{ 'Selected' | translate }}
+  </ng-container>
+
+</ion-button>

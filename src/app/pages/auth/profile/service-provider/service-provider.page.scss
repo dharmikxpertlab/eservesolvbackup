@@ -1,0 +1,30 @@
+mat-slide-toggle {
+    margin: auto;
+}
+
+.profile-picture {
+    position: relative;
+}
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 2px solid lightgrey;
+}
+.profile-picture ion-icon {
+    position: absolute;
+    top: calc(100% - 30px);
+    left: calc(50% + 10px);
+    height: 20px;
+    width: 20px;
+    background: lightgrey;
+    border-radius: 100%;
+    border: 1px solid grey;
+    padding: 6px;
+}
+
+.available-toggle {
+    display: flex;
+    align-items: center;
+}

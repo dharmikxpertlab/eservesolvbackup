@@ -1,0 +1,39 @@
+<ion-header>
+  <app-primary-header [title]="'Machine Management' | translate">
+    <ion-back-button></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none" class="ion-padding-start ion-padding-end">
+    <ion-grid class="ion-margin-top ion-margin-bottom ion-no-padding">
+      <ion-row>
+        <ion-col class="ion-no-padding">
+          <app-sorting
+            [fields]="[
+              {
+                text: 'Manufacturer',
+                value: 'manufacturer'
+              },
+              {
+                text: 'Type',
+                value: 'type'
+              }
+            ]"
+            (fieldSelectionEvent)="setFilter($event)">
+          </app-sorting>
+        </ion-col>
+        <ion-col>
+          <ion-button [routerLink]="['add']" mode="md" fill="outline" size="medium" class="ion-float-end">
+            <ion-icon slot="start" name="add"></ion-icon>
+            <ion-text>{{ 'Add' | translate }}</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ng-container *ngFor="let machine of machines | orderByKey: this.filter">
+      <app-machines-list-item *ngIf="locationId && (locationId === machine.location)" [routerLink]="['./', machine.id, 'edit']" routerLinkActive="router-link-active" [machine]="machine"class="ion-no-padding"></app-machines-list-item>
+    </ng-container>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,28 @@
+p {
+    margin: 0;
+}
+
+div.item {
+    margin-bottom: 16px;
+}
+
+h6 {
+    margin-bottom: 4px;
+}
+
+ion-label ion-item {
+    font-size: 12px;
+    --min-height: 1px;
+
+    ion-icon {
+        height: 12px;
+        width: 12px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    a {
+        margin-top: 2px;
+    }
+}

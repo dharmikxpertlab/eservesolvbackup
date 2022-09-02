@@ -1,0 +1,12 @@
+<div class="document-items">
+  <div *ngFor="let item of documents">
+    <div class="document-item" (click)="view(item.document)">
+      <ion-img *ngIf="item.type === OrderDescriptionDocumentTypeEnum.Image" [src]="item.document"></ion-img>
+      <ion-img *ngIf="item.type === OrderDescriptionDocumentTypeEnum.Document" src="assets/images/document.svg"></ion-img>
+    </div>
+
+    <div class="delete-button" (click)="delete(item.id)" *ngIf="showDeleteButton">
+      <ion-icon name="close-circle"></ion-icon>
+    </div>
+  </div>
+</div>

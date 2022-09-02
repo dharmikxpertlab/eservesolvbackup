@@ -1,0 +1,19 @@
+[build]
+  command = 'export PATH=./.ci/bin/:"$PATH" && build-netlify'
+  publish = 'www'
+
+[[redirects]]
+  from = '/api/*'
+  to = 'http://52.4.124.10:8082/:splat'
+  status = 200
+  force = true
+
+[[redirects]]
+  from = '/*'
+  to = '/index.html'
+  status = 200
+
+[plugins.local.server]
+  static = true
+  lambda = false
+  port = 8100

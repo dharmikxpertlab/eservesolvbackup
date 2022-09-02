@@ -1,0 +1,35 @@
+<ng-container *ngIf="options">
+    <h6 class="strong">{{ 'Skills' | translate }}</h6>
+
+    <ng-container *ngFor="let item of options[ServiceProviderOptions.Skills]">
+        <ion-item *ngIf="existsInServiceProviderProfile(item.id, ServiceProviderOptions.Skills)" class="ion-no-padding">
+            <ion-text>{{ item.name }}</ion-text>
+        </ion-item>
+    </ng-container>
+
+    <br>
+
+    <h6 class="strong">{{ 'Experience' | translate }}</h6>
+
+    <ng-container *ngFor="let item of options[ServiceProviderOptions.Experience]">
+        <ion-item *ngIf="existsInServiceProviderProfile(item.id, ServiceProviderOptions.Experience)" class="ion-no-padding">
+            <ion-text>{{ item.name }}</ion-text>
+        </ion-item>
+    </ng-container>
+
+    <br>
+
+    <h6 class="strong">{{ 'Certificates' | translate }}</h6>
+
+    <ng-container *ngFor="let item of options[ServiceProviderOptions.Certificate]">
+        <ion-item *ngIf="existsInServiceProviderProfile(item.id, ServiceProviderOptions.Certificate)" class="ion-no-padding">
+            <ion-text>{{ item.name }}</ion-text>
+        </ion-item>
+    </ng-container>
+
+    <ng-container *ngFor="let item of options[ServiceProviderOptions.Training]">
+        <ion-item *ngIf="existsInServiceProviderProfile(item.id, ServiceProviderOptions.Training)" class="ion-no-padding">
+            <ion-text>{{ item.name }}</ion-text>
+        </ion-item>
+    </ng-container>
+</ng-container>

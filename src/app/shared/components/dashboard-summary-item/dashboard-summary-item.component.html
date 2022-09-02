@@ -1,0 +1,9 @@
+<h6>{{ heading | translate }}</h6>
+
+<ng-content></ng-content>
+
+<ion-item class="ion-margin" lines="none" detail="false">
+  <button expand="block" mat-button color="primary" class="full-width" [routerLink]="[routerLinkUrl]">
+    {{ buttonText | translate }}
+  </button>
+</ion-item>

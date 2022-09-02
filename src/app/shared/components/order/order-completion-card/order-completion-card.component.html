@@ -1,0 +1,60 @@
+<ion-card>
+  <ion-card-content>
+    <ion-item class="ion-no-padding">
+      <ion-thumbnail slot="start">
+        <ion-icon color="success" name="checkmark-circle-outline"></ion-icon>
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{ 'Order Completed' | translate }}</h3>
+        <p>{{ order.completed_at | date }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-grid class="ion-no-padding ion-padding-top">
+      <ion-row>
+        <ion-col class="border-end">
+          <ion-row>
+            <ion-col>
+              <ion-text class="ion-text-center">
+                <h3>{{ 'Travel Time' | translate }}</h3>
+                <p *ngIf="order.travelling_time_text">{{ order.travelling_time_text }} {{ 'Hrs' | translate }}</p>
+                <p *ngIf="!order.travelling_time_text">00.00 {{ 'Hrs' | translate }}</p>
+              </ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text class="ion-text-center">
+                <h3>{{ 'Working Time' | translate }}</h3>
+                <p *ngIf="order.working_time_text">{{ order.working_time_text }} {{ 'Hrs' | translate }}</p>
+                <p *ngIf="!order.working_time_text">00.00 {{ 'Hrs' | translate }}</p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col class="border-left">
+          <ion-row>
+            <ion-col>
+              <ion-text class="ion-text-center">
+                <h3>{{ 'Traveling Cost' | translate }}*</h3>
+                <p *ngIf="userType === RolesEnum.Customer">{{ order.travelling_cost_customer | wrap : '' : Currency.amountSuffix }}</p>
+                <p *ngIf="userType === RolesEnum.SpEmployee">{{ order.travelling_cost_employee | wrap : '' : Currency.amountSuffix }}</p>
+              </ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text class="ion-text-center">
+                <h3>{{ 'Working Cost' | translate }}*</h3>
+                <p *ngIf="userType === RolesEnum.Customer">{{ order.working_cost_customer | wrap : '' : Currency.amountSuffix }}</p>
+                <p *ngIf="userType === RolesEnum.SpEmployee">{{ order.working_cost_employee | wrap : '' : Currency.amountSuffix }}</p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-note class="ion-margin-top ion-margin-start">
+          *{{ 'NOTE_ORDER_COMPLETION' | translate }}
+        </ion-note>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card-content>
+</ion-card>

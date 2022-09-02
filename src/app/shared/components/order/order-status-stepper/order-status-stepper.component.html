@@ -1,0 +1,35 @@
+<form [formGroup]="formGroup">
+  <h6 class="ion-padding-start ion-padding-top ion-no-margin">{{ 'Status' | translate }}</h6>
+
+  <mat-vertical-stepper linear="false" #stepper [attr.class]="role">
+
+    <ng-container *ngFor="let item of orderSteps">
+      <mat-step [completed]="formGroup.get(item.formField).valid" [stepControl]="formGroup.get(item.formField)">
+        <ng-template matStepLabel>{{ item.label | translate }}</ng-template>
+
+        <ion-note [class.ion-padding-start]="customer" *ngIf="formGroup.get(item.formField).valid">
+          {{ 'Done at' | translate }} {{ order[item.formField] | date : 'MMM d, y, h:mm:ss a' }}
+        </ion-note>
+
+        <ion-item lines="none" *ngIf="item.text" class="ion-no-padding">
+          <ion-note>
+            {{ item.text | translate }} &nbsp;
+          </ion-note>
+        </ion-item>
+
+        <div *ngIf="!formGroup.get(item.formField).valid && serviceProvider">
+          <button mat-flat-button color="primary" (click)="performAction(item.orderState)">{{ 'Confirm' | translate }}</button>
+        </div>
+      </mat-step>
+    </ng-container>
+
+    <ng-template matStepperIcon="edit">
+      <mat-icon>more_horiz</mat-icon>
+    </ng-template>
+
+    <ng-template matStepperIcon="number">
+      <mat-icon>more_horiz</mat-icon>
+    </ng-template>
+
+  </mat-vertical-stepper>
+</form>

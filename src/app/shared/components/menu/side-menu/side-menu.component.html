@@ -1,0 +1,19 @@
+<ion-list class="ion-no-padding">
+  <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+    <ng-container *ngxPermissionsOnly="p.requiredRoles">
+      <ion-item class="ion-margin-top" *ngIf="(loggedIn && p.shownAfterLogin) || (!loggedIn && p.shownBeforeLogin)" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+        <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+        <ion-label>{{ p.title | translate }}</ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-menu-toggle>
+</ion-list>
+
+<ion-footer>
+  <ion-menu-toggle>
+    <ion-item color="primary" routerDirection="root" [routerLink]="'/support'" lines="none" detail="false" routerLinkActive="selected">
+      <ion-icon slot="start" src="assets/icon/logo-white.svg" ></ion-icon>
+      <ion-label class="ion-margin">{{ 'Customer Service' | translate }}</ion-label>
+    </ion-item>
+  </ion-menu-toggle>
+</ion-footer>

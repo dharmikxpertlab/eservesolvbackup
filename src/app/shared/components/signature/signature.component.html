@@ -1,0 +1,31 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">{{ 'Close' |translate }}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p>
+    {{ 'I hereby confirm that the work has been completed. I am entitled to confirm.' | translate }}
+  </p>
+
+  <ion-item lines="none" class="ion-no-padding">
+    <ngx-signature-pad
+    #signature
+    [options]="options">
+  </ngx-signature-pad>
+  </ion-item>
+
+  <ion-button class='ion-margin-bottom' mode="md" (click)="clearSignature()">{{ 'Clear' | translate }}</ion-button>
+
+  <ion-item lines="none" class="ion-no-padding ion-margin-vertical">
+    <ngx-otp-input #orderPin [config]="otpInputConfig" (fill)="otpInputFilled($event)"></ngx-otp-input>
+  </ion-item>
+
+  <ion-button mode="md" (click)="clearOTP()" class="ion-margin-bottom">{{ 'Clear' | translate }}</ion-button>
+
+  <ion-button mode="md" expand="block" (click)="save()">{{ 'Save' | translate }}</ion-button>
+
+</ion-content>

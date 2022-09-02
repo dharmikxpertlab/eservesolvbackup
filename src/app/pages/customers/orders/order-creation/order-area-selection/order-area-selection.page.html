@@ -1,0 +1,27 @@
+<ion-header>
+  <app-primary-header [title]="'Create Order' | translate">
+    <ion-back-button></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+  <ion-text class="ion-text-center">
+    <h6>{{ 'Which department does the order belong to?' | translate }}</h6>
+  </ion-text>
+
+  <ion-list lines="none" class="ion-no-padding" *ngIf="selectedKind">
+    <ng-container *ngFor="let item of OrderAreas; let even = even; let i = index" >
+      <ion-item *ngIf="even" routerLinkActive="router-link-active">
+        <ion-row>
+          <ion-col>
+            <app-order-area-option [routerLink]="['/customers', 'orders', 'new', selectedKind, 'department', OrderAreas[i].id]" [orderArea]="OrderAreas[i]"></app-order-area-option>
+          </ion-col>
+          <ion-col>
+            <app-order-area-option [routerLink]="['/customers', 'orders', 'new', selectedKind, 'department', OrderAreas[i+1].id]" [orderArea]="OrderAreas[i+1]"></app-order-area-option>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ng-container>
+
+  </ion-list>
+</ion-content>

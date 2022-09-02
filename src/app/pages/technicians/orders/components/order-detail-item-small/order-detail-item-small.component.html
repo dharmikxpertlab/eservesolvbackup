@@ -1,0 +1,55 @@
+<ion-card class="ion-no-margin ion-margin-top" [routerLink]="['/technicians/orders/order', order.id, order.candidate]">
+  <ion-card-header class="ion-no-padding ion-padding-start">
+    <ion-item lines="none" class="ion-no-padding ion-no-margin">
+      <h5>{{ order.location_description.name }}</h5>
+      <ion-note mode="md" fill="clear" slot="end" class="md-padding-end">
+        <ion-icon name="calendar-clear-outline"></ion-icon>
+        {{ order.created_at | date }}
+      </ion-note>
+    </ion-item>
+  </ion-card-header>
+
+  <ion-row class="ion-padding-start">
+    <ion-col size="3">
+      <ion-label class="ion-no-margin">
+        <h6>{{ 'Travel Time' | translate }}</h6>
+        <p *ngIf="order.travelling_time_text">{{ order.travelling_time_text }} {{ 'Hrs' | translate }}</p>
+        <p *ngIf="!order.travelling_time_text">00.00 {{ 'Hrs' | translate }}</p>
+      </ion-label>
+    </ion-col>
+    <ion-col size="3">
+      <ion-label class="ion-no-margin">
+        <h6>{{ 'Traveling Cost' | translate }}</h6>
+        <p>{{ order.travelling_cost_employee | wrap: '' : Currency.amountSuffix }}</p>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-padding-start">
+    <ion-col size="3">
+      <ion-label class="ion-no-margin">
+        <h6>{{ 'Working Time' | translate }}</h6>
+        <p *ngIf="order.working_time_text">{{ order.working_time_text }} {{ 'Hrs' | translate }}</p>
+        <p *ngIf="!order.working_time_text">00.00 {{ 'Hrs' | translate }}</p>
+      </ion-label>
+    </ion-col>
+    <ion-col size="3">
+      <ion-label class="ion-no-margin">
+        <h6>{{ 'Working Cost' | translate }}</h6>
+        <p>{{ order.working_cost_employee | wrap: '' : Currency.amountSuffix }}</p>
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-button class="ion-float-end" size="medium" mode="md">{{ 'Details' | translate }}</ion-button>
+    </ion-col>
+  </ion-row>
+  <ng-container *ngIf="order.candidate && !order.candidate.loggedInUser">
+    <hr>
+    <ion-item lines="none" class="ion-no-padding ion-margin-start">
+      <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+      <ion-text>
+        {{ order.candidate.first_name }} {{ order.candidate.last_name }}
+      </ion-text>
+    </ion-item>
+  </ng-container>
+</ion-card>

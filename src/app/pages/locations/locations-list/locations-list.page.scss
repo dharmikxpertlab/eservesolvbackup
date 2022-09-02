@@ -1,0 +1,12 @@
+app-location-card {
+    width: 100%;
+}
+
+ion-list > ion-item {
+    --inner-padding-end: 0;
+}
+
+ion-col ion-button ion-text {
+    text-transform: none;
+    letter-spacing: normal;
+}

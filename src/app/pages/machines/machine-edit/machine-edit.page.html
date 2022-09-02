@@ -1,0 +1,41 @@
+<ion-header>
+  <app-primary-header *ngIf="location && !machine" [title]="'Machine Management' | translate">
+    <ion-back-button [defaultHref]="'/locations/' + location.id + '/edit'"></ion-back-button>
+  </app-primary-header>
+
+  <app-primary-header *ngIf="location && machine" [title]="machine.manufacturer">
+    <ion-back-button [defaultHref]="'/locations/' + location.id + '/edit'"></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="machineForm" class="ion-padding" (ngSubmit)="addOrUpdate()">
+
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>{{ 'Manufacturer' | translate }}</mat-label>
+      <input matInput formControlName="manufacturer">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Type' | translate }}</mat-label>
+      <input type="text" matInput formControlName="type">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Serial number' | translate }}</mat-label>
+      <input type="text" matInput formControlName="serial_number">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'Remarks' | translate }}</mat-label>
+      <input type="text" matInput formControlName="remark">
+    </mat-form-field>
+    <app-form-footer (saveButtonClick)="addOrUpdate()"></app-form-footer>
+
+    <ion-button *ngIf="machine" (click)="deleteMachine(machine)" expand="block" mode="md" class="ion-margin-top ion-margin-bottom">{{ 'Delete' | translate }}</ion-button>
+  </form>
+
+</ion-content>
+
+

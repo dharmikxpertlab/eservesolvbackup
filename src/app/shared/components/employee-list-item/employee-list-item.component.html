@@ -1,0 +1,32 @@
+<ion-card class="ion-no-margin ion-margin-bottom">
+
+  <ion-grid>
+    <ion-row *ngIf="serviceProvider && serviceProvider.profile">
+      <ion-col size="3">
+        <app-profile-picture [user]="serviceProvider"></app-profile-picture>
+        <ion-button class="status-btn" *ngIf="serviceProvider.profile.available" size="small" color="success" fill="outline">{{ 'available' | translate }}</ion-button>
+        <ion-button class="status-btn" *ngIf="!serviceProvider.profile.available" size="small" color="danger" fill="outline">{{ 'unavailable' | translate }}</ion-button>
+      </ion-col>
+      <ion-col size="9">
+        <ion-item lines="none">
+          <h5 class="ion-no-margin">{{ serviceProvider.first_name }} {{ serviceProvider.last_name }}</h5>
+        </ion-item>
+        <ion-item lines="none" *ngIf="serviceProvider.profile">
+          <ion-text slot="start">
+            <p class="ion-no-margin ion-margin-top">{{ 'Location' | translate }}: {{ serviceProvider.profile.location_description.name }}</p>
+          </ion-text>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label slot="start">
+            <h3>{{ 'Standard Rate' | translate }}</h3>
+            <p>{{ serviceProvider.profile.rate_standard | wrap : '' : Currency.amountPerHourSuffix }}</p>
+          </ion-label>
+          <ion-label class="ion-text-wrap">
+            <h3>{{ 'Emergency Rate' | translate }}</h3>
+            <p>{{ serviceProvider.profile.rate_emergency | wrap : '' : Currency.amountPerHourSuffix}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>

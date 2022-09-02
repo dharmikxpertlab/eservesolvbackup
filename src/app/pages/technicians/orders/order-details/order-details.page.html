@@ -1,0 +1,21 @@
+<ion-header>
+  <app-primary-header *ngIf="order" [title]="'ORDER_DETAIL_PAGE_TITLE' | translate : { company: order.location_description.name }">
+    <ion-back-button defaultHref="/technicians/dashboard"></ion-back-button>
+  </app-primary-header>
+</ion-header>
+
+<ion-content *ngIf="order">
+  <app-order-user-banner [candidateID]="candidateID" *ngIf="candidateID"></app-order-user-banner>
+  <ng-container *ngIf="complete">
+    <app-order-completion-card [userType]="RolesEnum.SpEmployee" [order]="order"></app-order-completion-card>
+  </ng-container>
+
+  <ng-container>
+    <app-order-details-component [userType]="RolesEnum.SpEmployee" [order]="order"></app-order-details-component>
+  </ng-container>
+
+  <ng-container *ngIf="!complete">
+    <app-order-status-stepper [orderSteps]="ServiceProviderOrderSteps" (orderStateChange)="stateChange()" [order]="order"></app-order-status-stepper>
+  </ng-container>
+
+</ion-content>
